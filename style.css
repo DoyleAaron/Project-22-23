@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
 
+:root {
+    --nav-height: 80px;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -12,6 +16,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    height: var(--nav-height);
     padding: 0 15px;
     background-color: #C5FFE2;
     border-bottom: 1px solid #77FFBB;
@@ -21,8 +26,8 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0 0 0;
-    height: 100vh;
+
+    height: calc(100vh - var(--nav-height));
 }
 
 body {

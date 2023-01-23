@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
 
+:root {
+    --nav-height: 80px;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -12,17 +16,25 @@ html, body {
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    height: var(--nav-height);
     padding: 0 15px;
     background-color: #C5FFE2;
     border-bottom: 1px solid #77FFBB;
+} 
+
+.nav-container .nav-buffer {
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0 0 0;
-    height: 100vh;
+
+    height: calc(100vh - var(--nav-height));
 }
 
 body {
@@ -56,6 +68,7 @@ body {
 
 .login-container .login-box form .input:focus {
     outline: none;
+    border-bottom: solid rgb(16, 106, 241) 1px;
 }
 
 .login-container .login-box form .submit {
@@ -67,4 +80,10 @@ body {
     color: rgb(97, 97, 97);
     border: 1px solid black;
     cursor: pointer;
+    transition: all 0.4s ease 0s;
+}
+
+.login-container .login-box form .submit:hover {
+    transition: all 0.4s ease 0s;
+    border: solid rgb(16, 106, 241) 1px;
 }

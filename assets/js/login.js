@@ -1,3 +1,3 @@
-var dateTimeSpan = document.getElementById("time");
+//var dateTimeSpan = ;
 const date = new Date();
-dateTimeSpan.innerHTML = date.toLocaleDateString();
+document.getElementById("time").innerHTML = date.toLocaleDateString();

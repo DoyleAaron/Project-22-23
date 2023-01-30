@@ -42,9 +42,18 @@ body .horizonal-nav .logo-container {
     color: var(--bg-sect-div);
 }
 
-body .horizonal-nav .logo-container span, img {
+body .horizonal-nav .logo-container span, i {
     color: var(--bg-sect-div);
     font-size: 24px;
+}
+
+body .horizonal-nav .logo-container i {
+    margin-right: 6px;
+    font-size: 28px;
+}
+
+body .horizonal-nav .account-container i {
+    display: none;
 }
 
 body .horizonal-nav .account-container button {
@@ -55,6 +64,7 @@ body .horizonal-nav .account-container button {
     padding: 10px 5px;
     border-radius: 5px;
     background-color: var(--bg-sect-div);
+    cursor: pointer;
 }   
 
 body .horizonal-nav .account-container button span {

@@ -1,109 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+
 :root {
+    --nav-height: 80px;
     --cool-blue: #0077C8 ;
     --dark-grey: #4C4C4C;
     --accent-hover: #FDB813;
     --bg-sect-div: #F2F2F2;
     --green: #00A651;
-    --green-lighter: #39dd88;
-    
-    --h-nav-height: 80px;
-
-    --nav-txt-size: 18px;
-    --bold: 22px;
 }
 
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
-    background-color: var(--bg-sect-div);
-    background-color: var(--bg-sect-div);
+    font-family: 'Outfit';
 }
 
-body {
-    height: calc(99vh - var(--h-nav-height));
-}
-
-body .horizonal-nav {
-    padding: 0;
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-    background-color: var(--green);
-    height: var(--h-nav-height);
-}
+    margin: 0;
+    height: var(--nav-height);
+    padding: 0 15px;
+    background-color:  var(--bg-sect-div);
+    border-bottom: 1px solid #77FFBB;
+} 
 
-body .horizonal-nav .logo-container {
+.nav-container .nav-buffer {
+    width: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--bg-sect-div);
 }
 
-body .horizonal-nav .logo-container span, i {
-    color: var(--bg-sect-div);
-    font-size: 24px;
-}
-
-body .horizonal-nav .logo-container i {
-    margin-right: 6px;
-    font-size: 28px;
-}
-
-body .horizonal-nav .account-container i {
-    display: none;
-}
-
-body .horizonal-nav .account-container button {
+.login-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border: none;
-    padding: 10px 5px;
-    border-radius: 5px;
+    align-items: center;
+
+    height: calc(100vh - var(--nav-height));
+}
+
+body {
+    background: radial-gradient(circle at center, #0eccf1, #8fffa2);
+}
+
+.login-container .login-box {
+    display: flex;
     background-color: var(--bg-sect-div);
-    cursor: pointer;
-}   
-
-body .horizonal-nav .account-container button span {
-    padding-left: 20px;
+    border: 1px rgb(158, 158, 158) solid;
+    height: 500px;
+    width: 400px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
-body .horizonal-nav .account-container button img {
-    width: 30%;
-}
-
-#time {
-    color: var(--bg-sect-div);
-}
-
-body .vertical-nav {
-    width: fit-content;
+.login-container .login-box form {
     display: flex;
     flex-direction: column;
-    background-color: var(--green);
-    height: calc(100vh - var(--h-nav-height));
 }
 
-body .vertical-nav a {
-    padding: 10px 40px 10px 40px;
+.login-container .login-box form .input {
+    background-color: var(--bg-sect-div);
+    border: none;
+    height: 40px;
+    padding: 0 10px;
+    margin: 4px 0;
+    border-bottom: solid rgb(83, 83, 83) 1px;
+}
+
+.login-container .login-box form .input:focus {
+    outline: none;
+    border-bottom: solid rgb(16, 106, 241) 1px;
+}
+
+.login-container .login-box form a {
     text-decoration: none;
-    color: var(--bg-sect-div);
-    font-size: 18px;
-    transition: 0.2s ease-in-out;
+    color: var(--dark-grey);
+    font-size: 14px;
 }
 
-body .vertical-nav a:nth-child(1) {
-    margin: 60px 0 0 0;
+.login-container .login-box form p {
+    text-align: center;
 }
 
-body .vertical-nav .selected {
-    background-color: var(--green-lighter);
+.login-container .login-box form .submit {
+    border: none;
+    background-color: var(--bg-sect-div);
+    margin: 4px 50px;
+    border-radius: 10px;
+    padding: 10px 0;
+    color: rgb(97, 97, 97);
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
 }
 
-body .vertical-nav a:hover {
-    transition: 0.2s ease-in-out;
-    background-color: var(--green-lighter);
+.login-container .login-box form .submit:hover {
+    transition: all 0.4s ease 0s;
+    border: solid rgb(16, 106, 241) 1px;
 }

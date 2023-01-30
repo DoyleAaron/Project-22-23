@@ -18,7 +18,7 @@ html, body {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0;
     height: var(--nav-height);
@@ -43,11 +43,12 @@ html, body {
 }
 
 body {
-    background: radial-gradient(circle at center, #0eccf1, #8fffa2);
+    background: var(--cool-blue);
 }
 
 .login-container .login-box {
     display: flex;
+    flex-direction: column;
     background-color: var(--bg-sect-div);
     border: 1px rgb(158, 158, 158) solid;
     height: 500px;
@@ -55,6 +56,11 @@ body {
     border-radius: 50px;
     align-items: center;
     justify-content: center;
+}
+
+.login-container .login-box i {
+    margin-bottom: 40px;
+    font-size: 48px;
 }
 
 .login-container .login-box form {

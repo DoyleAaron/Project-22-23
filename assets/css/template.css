@@ -31,7 +31,7 @@ body .horizonal-nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    background-color: var(--green);
+    background-color: var(--cool-blue);
     height: var(--h-nav-height);
 }
 
@@ -79,11 +79,15 @@ body .horizonal-nav .account-container button img {
     color: var(--bg-sect-div);
 }
 
+.main-container {
+    display: flex;
+}
+
 body .vertical-nav {
-    width: fit-content;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    background-color: var(--green);
+    background-color: var(--cool-blue);
     height: calc(100vh - var(--h-nav-height));
 }
 
@@ -100,10 +104,22 @@ body .vertical-nav a:nth-child(1) {
 }
 
 body .vertical-nav .selected {
-    background-color: var(--green-lighter);
+    background-color: var(--bg-sect-div);
+}
+
+body .vertical-nav .selected {
+    color: #000;
 }
 
 body .vertical-nav a:hover {
     transition: 0.2s ease-in-out;
-    background-color: var(--green-lighter);
+    background-color: var(--bg-sect-div);
+    color: #000;
+}
+
+/* template end */
+
+main {
+    width: 100%;
+    min-height: 100%;
 }

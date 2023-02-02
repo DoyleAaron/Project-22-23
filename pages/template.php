@@ -2,6 +2,10 @@
 include '../assets/php/db_connection.php';
 ?>
 
+<!-- 
+    Icons obtained from https://remixicon.com/ and https://fonts.google.com/icons 
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +25,8 @@ include '../assets/php/db_connection.php';
             <span id="logo-title"> | BP</span>
         </div>
         <div class="account-container">
-            <i class="ri-menu-line"></i>
             <button>
-                <img src="../assets/icons/person_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                <span class="accountId">USER</span>
+                <span class="accountId">Logout</span>
             </button>
         </div>
     </div>

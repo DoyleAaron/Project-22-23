@@ -59,7 +59,7 @@ body .horizonal-nav .account-container i {
 body .horizonal-nav .account-container button {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border: none;
     padding: 10px 5px;
     border-radius: 5px;
@@ -68,11 +68,8 @@ body .horizonal-nav .account-container button {
 }   
 
 body .horizonal-nav .account-container button span {
-    padding-left: 20px;
-}
-
-body .horizonal-nav .account-container button img {
-    width: 30%;
+    padding: 0 20px;
+    font-size: 16px
 }
 
 #time {

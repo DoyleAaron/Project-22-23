@@ -2,6 +2,11 @@
 
 :root {
     --nav-height: 80px;
+    --cool-blue: #0077C8 ;
+    --dark-grey: #4C4C4C;
+    --accent-hover: #FDB813;
+    --bg-sect-div: #F2F2F2;
+    --green: #00A651;
 }
 
 html, body {
@@ -13,12 +18,12 @@ html, body {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0;
     height: var(--nav-height);
     padding: 0 15px;
-    background-color: #C5FFE2;
+    background-color:  var(--bg-sect-div);
     border-bottom: 1px solid #77FFBB;
 } 
 
@@ -38,12 +43,13 @@ html, body {
 }
 
 body {
-    background: radial-gradient(circle at center, #0eccf1, #8fffa2);
+    background: var(--cool-blue);
 }
 
 .login-container .login-box {
     display: flex;
-    background-color: #ddf4ff;
+    flex-direction: column;
+    background-color: var(--bg-sect-div);
     border: 1px rgb(158, 158, 158) solid;
     height: 500px;
     width: 400px;
@@ -52,13 +58,18 @@ body {
     justify-content: center;
 }
 
+.login-container .login-box i {
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
 .login-container .login-box form {
     display: flex;
     flex-direction: column;
 }
 
 .login-container .login-box form .input {
-    background-color: #ddf4ff;
+    background-color: var(--bg-sect-div);
     border: none;
     height: 40px;
     padding: 0 10px;
@@ -71,10 +82,20 @@ body {
     border-bottom: solid rgb(16, 106, 241) 1px;
 }
 
+.login-container .login-box form a {
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-size: 14px;
+}
+
+.login-container .login-box form p {
+    text-align: center;
+}
+
 .login-container .login-box form .submit {
     border: none;
-    background-color: #ddf4ff;
-    margin: 50px 50px;
+    background-color: var(--bg-sect-div);
+    margin: 4px 50px;
     border-radius: 10px;
     padding: 10px 0;
     color: rgb(97, 97, 97);

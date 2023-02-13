@@ -32,7 +32,7 @@ include '../assets/php/db_connection.php';
     </div>
     <div class="main-container">
         <div class="vertical-nav">
-            <a href="#" class="selected">Counter Sales</a>
+            <a href="#" class="selected">Customer</a>
             <a href="#">Dispense Drugs</a>
             <a href="#">Stock Control</a>
             <a href="#">Supplier Accounts</a>

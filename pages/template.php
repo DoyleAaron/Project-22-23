@@ -40,7 +40,7 @@ include '../assets/php/db_connection.php';
             <a href="#">Reports</a>
         </div>
         <main>
-            <!-- put your html here -->
+            
         </main>
     </div>
 </body>

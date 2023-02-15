@@ -40,6 +40,10 @@ include '../assets/php/db_connection.php';
         </div>
         <main>
             
+           <div class="add-customer">
+            <H2 class="add-customer-title">Add Customer</H2>
+            
+
         </main>
     </div>
 </body>

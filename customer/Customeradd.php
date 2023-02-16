@@ -42,7 +42,7 @@ include '../assets/php/db_connection.php';
         <main>
             <div class = "addcustbox">
             <H2 align ="center">Add Customer</H2>
-            <form align ="center">
+            <form action="CustomerUpload.php" method="post" align="center">
                 <div class="inputbox">
                     <label for="firstname">First Name</label>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>

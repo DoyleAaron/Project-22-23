@@ -17,13 +17,6 @@
         <div class="login-box">
             <i class="ri-capsule-line"></i>
             <form method="post">
-                <!-- 
-                    id
-                    password
-
-                    submit
-                 -->
-
                  <input pattern="^[0-9]{1,3}$" title="Please enter a digit. Min 1, Max 999" class="input" type="text" name="userId" placeholder="User ID" autocomplete="off" />
                  <input class="input" type="password" name="password" placeholder="Password" autocomplete="off" />
                  <p><a href="#forgotpasswordformhere">Forgot Password?</a></p>

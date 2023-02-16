@@ -114,3 +114,43 @@ body .vertical-nav a:hover {
 
 /* template end */
 
+main{
+    padding-left: 30%;
+    padding-top: 5%;
+}
+
+.addcustbox{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-sect-div);
+    border: 1px rgb(158, 158, 158) solid;
+    height: 500px;
+    width: 400px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+form .inputbox{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.buttoncss{
+    border: none;
+    background-color: var(--bg-sect-div);
+    margin: 4px 10px;
+    border-radius: 10px;
+    padding: 8px 4px;
+    color: rgb(97, 97, 97);
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: center;
+}
+
+.buttoncss:hover{
+    border: solid rgb(16, 106, 241) 2px;
+}
+
+

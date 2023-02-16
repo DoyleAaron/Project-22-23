@@ -41,49 +41,50 @@ include '../assets/php/db_connection.php';
         </div>
         <main>
             <div class = "addcustbox">
-            <H2 align ="center">Add Customer</H2>
+            
+            <H2 align ="center" font="open sans">Add Customer</H2>
             <form action="CustomerUpload.php" method="post" align="center">
                 <div class="inputbox">
-                    <label for="firstname">First Name</label>
+                    <label for="firstname">First Name:</label>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>
                     <!-- Here I am creating the input box for the users first name and making security measures such as only using letters and making it a required field -->
                 </div>
         
                 <div class="inputbox">
-                    <label for="surname">Surname</label>
+                    <label for="surname">Surname:</label>
                     <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]+$" title="Surname must be only letters and less than 20 characters" maxlength="20" required>
                     <!-- Here I am creating the input box for the users surname and making security measures such as only using letters, making it a required field and having a max length of 20 characters -->
                 </div>
         
                 <div class="inputbox">
-                    <label for="dob">Date Of Birth</label>
+                    <label for="dob">Date Of Birth:</label>
                     <input type="date" name="dob" id="dob" placeholder="Date Of Birth" required>
                     <!-- Here I am creating the input box for the customers date of birth using the date of birth input type and making it a required field -->
                 </div>
 
                 <div class="inputbox">
-                    <label for="address">Address</label>
+                    <label for="address">Address:</label>
                     <input type="text" name="address" id="address" placeholder="Address" pattern="^[A-Za-z0-9\s]+$" title="Address must only conatin letters and numbers" required >
                     <!-- Here I am creating the input box for the customers address using a text input type and using the patterns to only allow numbers and letters -->
                 </div>
 
                 <div class="inputbox">
-                    <label for="phonenum">Phone Number</label>
+                    <label for="phonenum">Phone Number:</label>
                     <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
                     <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
                 </div>
 
                 <div class="inputbox">
-                    <label for="ppsn">PPSN</label>
+                    <label for="ppsn">PPSN:</label>
                     <input type="text" name="ppsn" id="ppsn" placeholder="PPSN" pattern="^[0-9]{7}[A-Za-z]$" title="PPSN must be 7 numbers followed by a letter" srequired >
                     <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
                 </div>
                 
                 <div class="buttons">
-                    <input type="reset" value="Clear Form" name="reset"/><br>
-                    <input type="submit" value="Send Form" name="submit"/>
+                    <input type="reset" class="buttoncss" value="Clear Form" name="reset">
+                    <input type="submit" class="buttoncss"  value="Send Form" name="submit">
                 </div>
-                <!-- These are the buttons below the list to either submit them or clear the list -->
+                <!-- These are the buttons below the list to either submit the details to the database or clear the list -->
             </form>
             </div>
         </main>

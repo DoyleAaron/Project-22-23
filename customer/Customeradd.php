@@ -45,13 +45,13 @@ include '../assets/php/db_connection.php';
             <form align ="center">
                 <div class="inputbox">
                     <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="[A-Za-z]" title="First Name must be only letters and less than 20 characters" maxlength="20" required>
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>
                     <!-- Here I am creating the input box for the users first name and making security measures such as only using letters and making it a required field -->
                 </div>
         
                 <div class="inputbox">
                     <label for="surname">Surname</label>
-                    <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]{20}" required>
+                    <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]+$" title="Surname must be only letters and less than 20 characters" maxlength="20" required>
                     <!-- Here I am creating the input box for the users surname and making security measures such as only using letters, making it a required field and having a max length of 20 characters -->
                 </div>
         
@@ -69,19 +69,19 @@ include '../assets/php/db_connection.php';
 
                 <div class="inputbox">
                     <label for="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="Address" pattern="[^A-Za-z\d]{50}" required >
+                    <input type="text" name="address" id="address" placeholder="Address" pattern="^[A-Za-z0-9\s]+$" title="Address must only conatin letters and numbers" required >
                     <!-- Here I am creating the input box for the customers address using a text input type and using the patterns to only allow numbers and letters -->
                 </div>
 
                 <div class="inputbox">
                     <label for="phonenum">Phone Number</label>
-                    <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="[\d]{10}" required >
+                    <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
                     <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
                 </div>
 
                 <div class="inputbox">
                     <label for="ppsn">PPSN</label>
-                    <input type="text" name="ppsn" id="ppsn" placeholder="PPSN" pattern="[A-Za-z\d]{8}" required >
+                    <input type="text" name="ppsn" id="ppsn" placeholder="PPSN" pattern="^[0-9]{7}[A-Za-z]$" title="PPSN must be 7 numbers followed by a letter" srequired >
                     <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
                 </div>
                 

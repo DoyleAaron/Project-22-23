@@ -11,12 +11,12 @@ if (!mysqli_query($conn, $sql) ){
 }
 
 
-$firstName = $_POST['firstname'];
-$secondName = $_POST['surname'];
+$firstName = $_POST['firstName'];
+$secondName = $_POST['surName'];
 $dob = $_POST['dob'];
 $customerAddress = $_POST['address'];
-$telephoneNumber = $_POST['phonenum'];
-$PPSN = $_POST['PPSN'];
+$telephoneNumber = $_POST['phoneNum'];
+$PPSN = $_POST['ppsn'];
 // Here I am using the post commands to assign the user input to the mysql variables
 
 //Here I am selecting everything that exists in the Customer table

@@ -9,8 +9,8 @@ if (!mysqli_query($conn, $sql) ){
     die ("An Error in the SQL Query: " . mysqli_error($conn));
 }
 
-$sql = "Insert into Customer(firstName, secondName, email, dob, customerAddress, telephoneNumber, PPSN)
-VALUES ('$_POST[firstname]','$_POST[surname]','$_POST[email]','$_POST[dob]','$_POST[customerAddress]','$_POST[phonenum]','$_POST[ppsn]')";
+$sql = "Insert into Customer(firstName, secondName, dob, customerAddress, telephoneNumber, PPSN)
+VALUES ('$_POST[firstname]','$_POST[surname]','$_POST[dob]','$_POST[customerAddress]','$_POST[phonenum]','$_POST[ppsn]')";
 
 if (!mysqli_query($conn, $sql) ){
     die ("An Error in the SQL Query: " . mysqli_error($conn));

@@ -56,12 +56,6 @@ include '../assets/php/db_connection.php';
                 </div>
         
                 <div class="inputbox">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-                    <!-- Here I am creating the input box for the users Email address using standard email conventions and making it a required field -->
-                </div>
-        
-                <div class="inputbox">
                     <label for="dob">Date Of Birth</label>
                     <input type="date" name="dob" id="dob" placeholder="Date Of Birth" required>
                     <!-- Here I am creating the input box for the customers date of birth using the date of birth input type and making it a required field -->

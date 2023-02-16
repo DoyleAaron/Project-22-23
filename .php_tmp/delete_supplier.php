@@ -1,10 +1,10 @@
-<?php
-include '../assets/php/db_connection.php';
-?>
+<?php 
+include '../assets/php/db_connection.php'; // including db connection for use
 
-<!-- 
-    Icons obtained from https://remixicon.com/ and https://fonts.google.com/icons 
- -->
+$sql = "SELECT * FROM Suppliers WHERE deleted = 0";
+
+$result = mysqli_query($conn, $sql);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ include '../assets/php/db_connection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharmacy</title>
-    <link rel="stylesheet" href="../assets/css/template.css">
+    <link rel="stylesheet" href="../assets/css/add_suppliers.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -39,7 +39,20 @@ include '../assets/php/db_connection.php';
             <a href="#" class="selected">Supplier</a>
         </div>
         <main>
-            <!-- put your html here -->
+            <div class="title">
+                <h1>Remove Supplier</h1>
+            </div>
+            <div class="form-container">
+                <select name="suppliers" id="suppliers">
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<option value="' . $row['supplierID'] . '">' . $row['supplierName'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
         </main>
     </div>
 </body>

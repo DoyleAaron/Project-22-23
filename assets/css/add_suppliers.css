@@ -82,7 +82,7 @@ body .horizonal-nav .account-container button span {
 }
 
 body .vertical-nav {
-    width: 300px;
+    width: var(--v-nav-width);
     display: flex;
     flex-direction: column;
     background-color: var(--cool-blue);
@@ -120,4 +120,37 @@ body .vertical-nav a:hover {
 main {
     min-width: calc(100% - var(--v-nav-width));
     min-height: calc(100% - var(--h-nav-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .form-container form .input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+main form .final input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-sect-div);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main form .final .left {
+    float: left;
+}
+
+main form .final .right {
+    float: right;
 }

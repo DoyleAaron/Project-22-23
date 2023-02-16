@@ -82,7 +82,7 @@ body .horizonal-nav .account-container button span {
 }
 
 body .vertical-nav {
-    width: 300px;
+    width: var(--v-nav-width);
     display: flex;
     flex-direction: column;
     background-color: var(--cool-blue);
@@ -120,4 +120,29 @@ body .vertical-nav a:hover {
 main {
     min-width: calc(100% - var(--v-nav-width));
     min-height: calc(100% - var(--h-nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px; 
+}
+
+main .box-container a {
+    background-color: var(--cool-blue);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+main .box-container .box p {
+    color: var(--bg-sect-div);
+    font-size: 24px;
 }

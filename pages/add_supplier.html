@@ -39,11 +39,11 @@
                     <h1>Add Supplier</h1>
                 </div>
                 <div class="form-container">
-                    <form action="../assets/php/addSupplier.php" method="post" onsubmit="submit()">
+                    <form action="../assets/php/addSupplier.php" method="post" name="form">
                         <div class="input-container">
                             <label for="supplierName">Name</label>
                             <input type="text" name="supplierName"
-                                pattern="^[a-zA-Z0-9]+$" required>
+                                pattern="^[a-zA-Z0-9\s]+$" required>
                         </div>
                         <div class="input-container">
                             <label for="email">Email</label>
@@ -66,7 +66,7 @@
                                 pattern="^[0-9]{10}$">
                         </div>
                         <div class="final">
-                            <input class="left" type="submit" value="Submit">
+                            <button class="left" onclick="validate()">Submit</button> 
                             <input class="right" type="reset" value="Reset">
                         </div>
                     </form>
@@ -75,4 +75,15 @@
         </div>
     </body>
     <script src="../assets/js/date.js"></script>
+    <script>
+        function validate() {
+            let result = confirm("Are you sure you want to add this supplier?");
+
+            if (result) {
+                document.form.submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
 </html>

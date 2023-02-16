@@ -35,6 +35,8 @@ $new_id = $last_id + 1;
 // insert
 $sql = "INSERT INTO Suppliers (supplierID, supplierName, address, email, website, telephone, deleted) VALUES ('$new_id', '$supplierName', '$address', '$email', '$website', '$telephone', '0')";
 
+$result = mysqli_query($conn, $sql);
+
 header("Location: ../../pages/add_supplier.html");
 
 ?>

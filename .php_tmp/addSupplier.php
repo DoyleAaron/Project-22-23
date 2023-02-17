@@ -18,23 +18,31 @@ $email = $_POST['email'];
 $website = $_POST['website'];
 $telephone = $_POST['telephone'];
 
+// sanitizing the data - prevent SQL injection
+$supplierName = mysqli_real_escape_string($conn, $supplierName);
+$address = mysqli_real_escape_string($conn, $address);
+$email = mysqli_real_escape_string($conn, $email);
+$website = mysqli_real_escape_string($conn, $website);
+$telephone = mysqli_real_escape_string($conn, $telephone);
+
 // selecting everything from suppliers for getting last row
-$sql = "SELECT * FROM Suppliers";
+$sql = "SELECT MAX(supplierID) AS supplierID FROM suppliers";
 
 // getting the result
-$result = mysqli_query($conn, $sql);    
+$result = mysqli_query($conn, $sql) or die("Error in Selecting " . mysqli_error($conn));  
 
 // Get the last supplierID
-while($row = mysqli_fetch_array($result)) {
-    $last_id = $row['supplierID'];
-}
+$row = mysqli_fetch_array($result);
 
 // Add 1 to the last supplierID
-$new_id = $last_id + 1;
+$new_id = $row['supplierID'] + 1;
 
 // insert
-$sql = "INSERT INTO Suppliers (supplierID, supplierName, address, email, website, telephone, deleted) VALUES ('$new_id', '$supplierName', '$address', '$email', '$website', '$telephone', '0')";
+$sql = "INSERT INTO Suppliers (supplierID, supplierName, address, email, website, telephone, deleted) VALUES ($new_id, $supplierName, $address, $email, $website, $telephone, '0')";
 
-header("Location: ../../pages/add_supplier.html");
+$result = mysqli_query($conn, $sql) or die("Error in Selecting " . mysqli_error($conn));
+
+echo $result;
+
 
 ?>

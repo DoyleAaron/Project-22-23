@@ -13,7 +13,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Outfit';
+    font-family: 'Outfit', serif;
 }
 
 .nav-container {
@@ -92,12 +92,11 @@ body {
     text-align: center;
 }
 
-.login-container .login-box form .submit {
-    border: none;
+.login-container .login-box .submit {
     background-color: var(--bg-sect-div);
     margin: 4px 50px;
     border-radius: 10px;
-    padding: 10px 0;
+    padding: 10px 10px;
     color: rgb(97, 97, 97);
     border: 1px solid black;
     cursor: pointer;

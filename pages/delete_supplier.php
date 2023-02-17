@@ -1,5 +1,6 @@
 <?php 
-include '../assets/php/db_connection.php'; // including db connection for use
+//include '../assets/php/db_connection.php'; // including db connection for use
+include 'C:\Users\Jack\Documents\College\Project-22-23\assets\php\db_connection.php';
 
 $sql = "SELECT * FROM Suppliers WHERE deleted = 0";
 
@@ -36,7 +37,7 @@ $result = mysqli_query($conn, $sql);
             <a href="#">Stock Control</a>
             <a href="#">Doctor</a>
             <a href="#">Customer</a>
-            <a href="#" class="selected">Supplier</a>
+            <a href="../pages/suppliers.html" class="selected">Supplier</a>
         </div>
         <main>
             <div class="title">

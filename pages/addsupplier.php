@@ -1,59 +1,11 @@
 <?php
 
-include '../assets/php/db_connection.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-/*
-supplierName varchar 30
-address varchar 255
-email varchar 30
-website varchar 30
-telephone int 11
-deleted int 1
-*/
-
-// getting all information from form post
-
-// if the form is not submitted
-$success = false;
-
-if (isset($_POST['supplierName']) && isset($_POST['address']) && isset($_POST['email']) && isset($_POST['website']) && isset($_POST['telephone'])) {
-
-    $supplierName = $_POST['supplierName'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $website = $_POST['website'];
-    $telephone = $_POST['telephone'];
-
-// selecting everything from suppliers for getting last row
-    $sql = "SELECT MAX(supplierID) AS supplierID FROM suppliers";
-
-// getting the result
-    $result = mysqli_query($conn, $sql) or die("Error in Selecting " . mysqli_error($conn));
-
-// Get the last supplierID
-    $row = mysqli_fetch_array($result);
-
-// Add 1 to the last supplierID
-    $new_id = $row['supplierID'] + 1;
-
-// Sanitize the data - prevent SQL injection
-    $supplierName = mysqli_real_escape_string($conn, $supplierName);
-    $address = mysqli_real_escape_string($conn, $address);
-    $email = mysqli_real_escape_string($conn, $email);
-    $website = mysqli_real_escape_string($conn, $website);
-    $telephone = mysqli_real_escape_string($conn, $telephone);
-
-// insert
-    $sql = "INSERT INTO suppliers (supplierID, supplierName, address, email, website, telephone, deleted) VALUES ('$new_id', '$supplierName', '$address', '$email', '$website', '$telephone', '0')";
-
-    $result = mysqli_query($conn, $sql) or die("Error in Selecting " . mysqli_error($conn));
-
-    if (mysqli_error($conn)) {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    } else {
-        $success = true;
-    }
-
+if (!isset($_SESSION['success'])) {
+    $_SESSION['success'] = false;
 }
 
 ?>
@@ -92,35 +44,41 @@ if (isset($_POST['supplierName']) && isset($_POST['address']) && isset($_POST['e
         <a href="#">Stock Control</a>
         <a href="#">Doctor</a>
         <a href="#">Customer</a>
-        <a href="./suppliers.html" class="selected">Supplier</a>
+        <a href="suppliers.php" class="selected">Supplier</a>
     </div>
     <main>
-                <span>
-                    <?php
-                    if ($success) {
-                        echo '<script>
+        <span>
+            <?php
+            if ($_SESSION['success']) {
+                echo '<script>
                             const success = "Supplier added successfully.";
                             const span = document.querySelector("main span");
                             
                             // set span text to success
                             span.innerHTML = success;
+                            span.style.display = "block";
+                            
+                            setInterval(() => {
+                                span.style.display = "none"
+                            }, 5000);
                         </script>';
-                    } else {
-                        echo '
+                $_SESSION['success'] = false;
+            } else {
+                echo '
                             <script>
                                 const span = document.querySelector("main span");
                                 span.innerHTML = "";
                                 span.style.display = "none";
                             </script>
                             ';
-                    }
-                    ?>
-                </span>
+            }
+            ?>
+        </span>
         <div class="form-container">
             <div class="title">
                 <h1>Add Supplier</h1>
             </div>
-            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" name="form">
+            <form action="../assets/includes/addsupplier.inc.php" method="post" name="form">
                 <div class="input-container">
                     <label for="supplierName">Name</label>
                     <input type="text" name="supplierName"
@@ -162,7 +120,7 @@ if (isset($_POST['supplierName']) && isset($_POST['address']) && isset($_POST['e
                            required>
                 </div>
                 <div class="final">
-                    <button class="left" onclick="validate()">Submit</button>
+                    <button class="left" name="submit" onclick="validate()">Submit</button>
                     <input class="right" type="reset" value="Reset">
                 </div>
             </form>

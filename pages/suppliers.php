@@ -32,14 +32,14 @@
         </div>
         <main>
             <div class="box-container">
-                <a href="add_supplier.php">
+                <a href="addsupplier.php">
                     <div class="box">
                         <p>Add</p>
                     </div>
                 </a>
-                <a href="./delete_supplier.php">
+                <a href="./amendview.php">
                     <div class="box">
-                        <p>Delete</p>
+                        <p>Amend/View</p>
                     </div>
                 </a>
                 <a href="">

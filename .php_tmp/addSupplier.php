@@ -1,5 +1,5 @@
 <?php 
-include 'db_connection.php'; // including db connection for use
+include 'dbh.inc.php'; // including db connection for use
 
 /* 
 supplierName varchar 30

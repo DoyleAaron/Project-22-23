@@ -25,7 +25,7 @@
     </div>
     <script>
         function logon() {
-            window.location.href = "./suppliers.html";
+            window.location.href = "suppliers.php";
         }
     </script>
 </body>

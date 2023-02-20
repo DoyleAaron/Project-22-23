@@ -123,48 +123,54 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-main .wrapper form {
+main form {
     border: solid black;
     border-radius: 10px;
     padding: 40px;
-    width: 100%;
+    width: 30%;
 }
 
-main .wrapper form .info {
+main form h1 {
+    text-align: center;
+    margin: 0 0 30px 0; /* T R B L */
+}
+
+main form .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-main .wrapper form .info input {
+main form .info input {
     padding: 5px;
     width: calc(var(--input-width) - 14px);
 }
 
-main .wrapper form .info select {
+main form .info select {
     padding: 5px;
     width: 60%;
 }
 
-main .wrapper form .buttons {
+main form .buttons {
     display: flex;
     flex-direction: column;
 }
 
-main .wrapper form .buttons .amend-buttons {
+main form .buttons .amend-buttons {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-main .wrapper form .buttons .amend-buttons button {
+main form .buttons .amend-buttons button {
     width: 100%;
 }
 
-main .wrapper form .buttons button {
+main form .buttons button {
     border: none;
     border-radius: 5px;
     color: white;
@@ -175,14 +181,21 @@ main .wrapper form .buttons button {
     font-size: 16px;
 }
 
-main span {
-    background: var(--green);
-    color: var(--bg-sect-div);
-    padding: 10px 20px;
-    border-radius: 10px;
-    position: absolute;
-    top: 20%;
-    cursor: default;
-    user-select: none;
-    margin: 0 auto;
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0 0;
+}
+
+.error {
+    width: 100%;
+    color: red;
+    text-align: center;
+}
+
+.success {
+    width: 100%;
+    color: green;
+    text-align: center;
 }

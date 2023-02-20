@@ -182,3 +182,11 @@ main form .final .left {
 main form .final .right {
     margin-left: 5px;
 }
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

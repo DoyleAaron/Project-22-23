@@ -1,57 +1,66 @@
 <?php
 
-include 'dbh.inc.php';
+include_once('../../assets/includes/dbh.inc.php');
+include_once('../../assets/includes/verification.php');
 
-/*
-supplierName varchar 30
-address varchar 255
-email varchar 30
-website varchar 30
-telephone int 11
-deleted int 1
-*/
-
-// getting all information from form post
-
-if (isset($_POST['submit'])) {
-
-    $supplierName = $_POST['supplierName'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $website = $_POST['website'];
-    $telephone = $_POST['telephone'];
-    $deleted = 0;
-
-// selecting everything from suppliers for getting last row
-    $sql = "SELECT MAX(supplierID) AS supplierID FROM suppliers";
-
-// getting the result
-    $result = mysqli_query($conn, $sql) or die("Error in Selecting " . mysqli_error($conn));
-
-// Get the last supplierID
-    $row = mysqli_fetch_array($result);
-
-// Add 1 to the last supplierID
-    $new_id = $row['supplierID'] + 1;
-
-// insert
-    $stmt = $conn->prepare("INSERT INTO suppliers (supplierID, supplierName, address, email, website, telephone, deleted) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("isssssi", $new_id, $supplierName, $address, $email, $website, $telephone, $deleted);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-
-    if (mysqli_error($conn)) {
-        $_SESSION['success'] = false;
-    } else {
-        $_SESSION['success'] = true;
-    }
-
-    $stmt->close();
-
-    header("Location: ../../pages/addsupplier.php");
-
+if (emptyInputs()) {
+    header("location: ../../pages/addsupplier.php?error=emptyinput");
+    exit();
 }
+
+if (invalidName()) {
+    header("location: ../../pages/addsupplier.php?error=invalidname");
+    exit();
+}
+
+if (invalidAddress()) {
+    header("location: ../../pages/addsupplier.php?error=invalidaddress");
+    exit();
+}
+
+if (invalidEmail()) {
+    header("location: ../../pages/addsupplier.php?error=invalidemail");
+    exit();
+}
+
+if (invalidTelephone()) {
+    header("location: ../../pages/addsupplier.php?error=invalidphone");
+    exit();
+}
+
+if (invalidWebsite()) {
+    header("location: ../../pages/addsupplier.php?error=invalidwebsite");
+    exit();
+}
+
+$stmt = $conn->prepare("SELECT MAX(supplierID) as id FROM suppliers");
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $id = $row['id'];
+    }
+}
+
+$id = $id + 1;
+
+$supplierName = $_POST['supplierName'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$website = $_POST['website'];
+$telephone = $_POST['telephone'];
+
+$stmt = $conn->prepare("INSERT INTO suppliers (supplierID, supplierName, email, address, website, telephone, deleted) VALUES (?, ?, ?, ?, ?, ?, 0)");
+$stmt->bind_param("isssss", $id, $supplierName, $email, $address, $website, $telephone);
+$stmt->execute();
+
+// check for error
+if ($stmt->error) {
+    header("location: ../../pages/addsupplier.php?error=stmtfailed");
+    exit();
+}
+
+$stmt->close();
+header("location: ../../pages/addsupplier.php?error=none");
+exit();

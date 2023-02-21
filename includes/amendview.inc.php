@@ -1,6 +1,6 @@
 <?php
 include_once 'dbh.inc.php';
-include_once 'verification.php';
+include_once 'addsupplier.functions.php';
 
 if (!isset($_SESSION)) {
     session_start();
@@ -48,27 +48,27 @@ function amend(): void
 
 
     if (empty($_POST['suppliers']) || empty($_POST['email']) || empty($_POST['address']) || empty($_POST['website']) || empty($_POST['telephone'])) {
-        header("Location: ../../pages/amendview.php?error=emptyinput");
+        header("Location: ../amendview.php?error=emptyinput");
         exit();
     }
 
     if (invalidAddress()) {
-        header("Location: ../../pages/amendview.php?error=invalidaddress");
+        header("Location: ../amendview.php?error=invalidaddress");
         exit();
     }
 
     if (invalidEmail()) {
-        header("Location: ../../pages/amendview.php?error=invalidemail");
+        header("Location: ../amendview.php?error=invalidemail");
         exit();
     }
 
     if (invalidWebsite()) {
-        header("Location: ../../pages/amendview.php?error=invalidwebsite");
+        header("Location: ../amendview.php?error=invalidwebsite");
         exit();
     }
 
     if (invalidTelephone()) {
-        header("Location: ../../pages/amendview.php?error=invalidphone");
+        header("Location: ../amendview.php?error=invalidphone");
         exit();
     }
 
@@ -81,13 +81,13 @@ function amend(): void
 
 if (isset($_POST['view'])) {
     view();
-    header("Location: ../../pages/amendview.php");
+    header("Location: ../amendview.php");
     return;
 }
 
 if (isset($_POST['submit-amend'])) {
     amend();
     view();
-    header("Location: ../../pages/amendview.php?error=none");
+    header("Location: ../amendview.php?error=none");
     return;
 }

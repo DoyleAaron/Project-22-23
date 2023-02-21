@@ -1,6 +1,11 @@
 <?php
 
-include_once('dbh.inc.php');
+include_once 'dbh.inc.php';
+
+function createErrorMessage($error): string
+{
+    return "?error=$error&supplierName=" . $_POST['supplierName'] . "&email=" . $_POST['email'] . "&address=" . $_POST['address'] . "&website=" . $_POST['website'] . "&telephone=" . $_POST['telephone'];
+}
 
 function emptyInputs(): bool
 {

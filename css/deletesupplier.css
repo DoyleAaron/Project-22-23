@@ -1,0 +1,172 @@
+:root {
+    --cool-blue: #0077C8;
+    --dark-grey: #4C4C4C;
+    --accent-hover: #FDB813;
+    --bg-sect-div: #F2F2F2;
+    --green: #00A651;
+    --green-lighter: #39dd88;
+
+    --h-nav-height: 80px;
+    --v-nav-width: 300px;
+
+    --nav-txt-size: 18px;
+    --bold: 22px;
+
+    --input-width: 60%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--bg-sect-div);
+}
+
+body {
+    height: calc(99vh - var(--h-nav-height));
+}
+
+body .horizonal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: var(--cool-blue);
+    height: var(--h-nav-height);
+}
+
+body .horizonal-nav .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-sect-div);
+}
+
+body .horizonal-nav .logo-container span, i {
+    color: var(--bg-sect-div);
+    font-size: 24px;
+}
+
+body .horizonal-nav .logo-container i {
+    margin-right: 6px;
+    font-size: 28px;
+}
+
+body .horizonal-nav .account-container i {
+    display: none;
+}
+
+body .horizonal-nav .account-container button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: var(--bg-sect-div);
+    cursor: pointer;
+}
+
+body .horizonal-nav .account-container button span {
+    padding: 0 20px;
+    font-size: 16px
+}
+
+#time {
+    color: var(--bg-sect-div);
+}
+
+.main-container {
+    display: flex;
+}
+
+body .vertical-nav {
+    width: var(--v-nav-width);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cool-blue);
+    height: calc(100vh - var(--h-nav-height));
+}
+
+body .vertical-nav a {
+    padding: 10px 40px 10px 40px;
+    text-decoration: none;
+    color: var(--bg-sect-div);
+    font-size: 18px;
+    transition: 0.2s ease-in-out;
+}
+
+body .vertical-nav a:nth-child(1) {
+    margin: 60px 0 0 0;
+}
+
+body .vertical-nav .selected {
+    background-color: var(--bg-sect-div);
+}
+
+body .vertical-nav .selected {
+    color: #000;
+}
+
+body .vertical-nav a:hover {
+    transition: 0.2s ease-in-out;
+    background-color: var(--bg-sect-div);
+    color: #000;
+}
+
+/* template end */
+
+main {
+    min-width: calc(100% - var(--v-nav-width));
+    min-height: calc(100% - var(--h-nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main form {
+    padding: 40px;
+    border: solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+main form h1 {
+    text-align: center;
+}
+
+main form .group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+main form .group select {
+    padding: 10px;
+}
+
+main form button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--cool-blue);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.error, .success {
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

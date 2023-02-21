@@ -1,7 +1,7 @@
 <?php
 
-include_once('../assets/includes/dbh.inc.php');
-include_once('../assets/includes/verification.php');
+include_once('includes/dbh.inc.php');
+include_once('includes/addsupplier.functions.php');
 
 if (!isset($_SESSION)) {
     session_start();
@@ -15,12 +15,12 @@ if (!isset($_SESSION)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharmacy</title>
-    <link rel="stylesheet" href="../assets/css/amendview.css">
+    <link rel="stylesheet" href="css/amendview.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="../assets/js/date.js" defer></script>
-    <script src="../assets/js/amendview.js" defer></script>
+    <script src="js/date.js" defer></script>
+    <script src="js/amendview.js" defer></script>
 </head>
 <body>
 <div class="horizonal-nav">
@@ -44,7 +44,7 @@ if (!isset($_SESSION)) {
         <a href="suppliers.php" class="selected">Supplier</a>
     </div>
     <main>
-        <form name="form" action="../assets/includes/amendview.inc.php" method="post" class="info-wrapper">
+        <form name="form" action="includes/amendview.inc.php" method="post" class="info-wrapper">
             <h1>Amend and View</h1>
             <div class="info">
                 <label for="suppliers">Supplier </label>

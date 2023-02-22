@@ -11,11 +11,11 @@ if (!mysqli_query($conn, $sql) ){
 }
 
 
-$firstName = $_POST['firstName'];
-$secondName = $_POST['surName'];
+$firstName = $_POST['firstname'];
+$secondName = $_POST['surname'];
 $dob = $_POST['dob'];
 $customerAddress = $_POST['address'];
-$telephoneNumber = $_POST['phoneNum'];
+$telephoneNumber = $_POST['phonenum'];
 $PPSN = $_POST['ppsn'];
 // Here I am using the post commands to assign the user input to the mysql variables
 

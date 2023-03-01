@@ -17,8 +17,7 @@ include '../../assets/php/db_connection.php';
             function populate() {
             var listbox = document.getElementById("listbox");
             var result = listbox.options[listbox.selectedIndex].value;
-            var doctorDetails = result.split(', ');
-            document.getElementById("display").innerHTML = "The details of the selected doctor are " + result;
+            var doctorDetails = result.split('+ ');
             document.getElementById("amendid").value = doctorDetails[0];
             document.getElementById("amendFirstname").value = doctorDetails[1];
             document.getElementById("amendSurname").value = doctorDetails[2];
@@ -26,7 +25,7 @@ include '../../assets/php/db_connection.php';
             document.getElementById("amendSurgPhone").value = doctorDetails[4];
             document.getElementById("amendPhone").value = doctorDetails[5];
             document.getElementById("amendAddress").value = doctorDetails[6];
-            document.getElementById("amendcode").value = doctorDetails[7];
+            document.getElementById("amendHomePhone").value = doctorDetails[7];
             }
 
             function toggleLock(){
@@ -76,39 +75,65 @@ include '../../assets/php/db_connection.php';
         </script>
     </head>
     <body>
-        <h1> Amend/view a Doctor </h1>
-        Please select a doctor to view and edit
-        <?php include 'listbox.php';?>
+        <div class="horizonal-nav">
+            <span id="time"></span>
+                <div class="logo-container">
+                <i class="ri-capsule-line"></i>
+                <span id="logo-title"> | BP</span>
+            </div>
+            <div class="account-container">
+                <button>
+                    <span class="accountId">Logout</span>
+                </button>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="vertical-nav">
+                <a href="#">Drugs</a>
+                <a href="#">Stock Control</a>
+                <a href="#" class="selected">Doctor</a>
+                <a href="#">Customer</a>
+                <a href="#">Supplier</a>
+            </div>
+            <main align = "center">
+                <h2> Amend/view a Doctor </h2>
+                Please select a doctor to view and edit
+                <?php include 'listbox.php';?>
 
-        <p id="display"></p>
-        <input type = "button" value = "Amend Details" id = "amendViewButton" onclick = "toggleLock()">
-
-        <form action="AmendDoctor.php" method="post" onsubmit="return confirmCheck()">
-                <p class = "input"><label for = "amendFirstname">First Name</label>
-                    <input type = "text" name = "amendFirstname" id = "amendFirstname" placeholder= "First Name" autocomplete=off pattern="[a-zA-Z]+" maxlength="30" title="Must contain only letters" required/>
-                </p>
-                <p class = "input"><label for = "amendSurname">Last Name</label>
-                    <input type = "text" name = "amendSurname" id = "amendSurname" placeholder= "Last Name" autocomplete=off pattern="[a-zA-Z]+" maxlength="30" title="Must contain only letters" required/>
-                </p>
-                <p class = "input"><label for = "amendSurgAddress">Surgery Address</Address></label>
-                    <input type = "text" name = "amendSurgAddress" id = "amendSurgAddress" placeholder= "Surgery Address" autocomplete=off maxlength="100" size = "40" required/>
-                </p>
-                <p class = "input"><label for = "amendSurgPhone">Surgery Phone Number</label>
-                    <input type = "text" name = "amendSurgPhone" id = "amendSurgPhone" placeholder= "Surgery Number" autocomplete=off pattern="[\s0-9-()]+"  maxlength="15" title="Must contain numbers and can contain brackets, spaces and hyphen " required/>
-                </p>
-                <p class = "input"><label for = "amendPhone">Mobile Number</label>
-                    <input type = "text" name = "amendPhone" id = "amendPhone" placeholder= "Mobile Number" autocomplete=off pattern="[\s0-9-()]+"  maxlength="15" title="Must contain numbers and can contain brackets, spaces and hyphen "  required/>
-                </p>
-                <p class = "input"><label for = "amendAddress">Home Address</Address></label>
-                    <input type = "text" name = "amendAddress" id = "amendAddress" placeholder= "Home Address" autocomplete=off maxlength="100" size = "40" required/>
-                </p>
-                <p class = "input"><label for = "amendHomePhone">Home Phone Number</label>
-                    <input type = "text" name = "amendHomePhone" id = "amendHomePhone" placeholder= "Home Phone Number" autocomplete=off pattern="[\s0-9-()]+" maxlength="15" title="Must contain numbers and can contain brackets, spaces and hyphen " required/>
-                </p>
-                <p>
-                    <input class="button" type = "submit" value = "Submit"/>
-                </p>
-            </form>
-
+                <p id="display"></p>
+                <input type = "button" value = "Amend Details" id = "amendViewButton" onclick = "toggleLock()">
+                <br><br>
+                <form action="AmendDoctor.php" method="post" onsubmit="return confirmCheck()">
+                    <p class = "input"><label for = "amendid">Doctor ID</label>
+                        <input type = "text" name = "amendid" id = "amendid" placeholder= "Doctor ID" disabled>
+                    </p>
+                    <p class = "input"><label for = "amendFirstname">First Name</label>
+                        <input type = "text" name = "amendFirstname" id = "amendFirstname" placeholder= "First Name" autocomplete=off pattern="[a-zA-Z]+" maxlength="30" title="Must contain only letters" disabled required/>
+                    </p>
+                    <p class = "input"><label for = "amendSurname">Last Name</label>
+                        <input type = "text" name = "amendSurname" id = "amendSurname" placeholder= "Last Name" autocomplete=off pattern="[a-zA-Z]+" maxlength="30" title="Must contain only letters" disabled required/>
+                    </p>
+                    <p class = "input"><label for = "amendSurgAddress">Surgery Address</Address></label>
+                        <input type = "text" name = "amendSurgAddress" id = "amendSurgAddress" placeholder= "Surgery Address" autocomplete=off maxlength="100" size = "40" disabled required/>
+                    </p>
+                    <p class = "input"><label for = "amendSurgPhone">Surgery Phone Number</label>
+                        <input type = "text" name = "amendSurgPhone" id = "amendSurgPhone" placeholder= "Surgery Number" autocomplete=off pattern="[\s0-9-()]+"  maxlength="15" title="Must contain numbers and can contain brackets, spaces and hyphen " disabled required/>
+                    </p>
+                    <p class = "input"><label for = "amendPhone">Mobile Number</label>
+                        <input type = "text" name = "amendPhone" id = "amendPhone" placeholder= "Mobile Number" autocomplete=off pattern="[\s0-9-()]+"  maxlength="15" title="Must contain numbers and can contain brackets, spaces and hyphen " disabled  required/>
+                    </p>
+                    <p class = "input"><label for = "amendAddress">Home Address</Address></label>
+                        <input type = "text" name = "amendAddress" id = "amendAddress" placeholder= "Home Address" autocomplete=off maxlength="100" size = "40" disabled required/>
+                    </p>
+                    <p class = "input"><label for = "amendHomePhone">Home Phone Number</label>
+                        <input type = "text" name = "amendHomePhone" id = "amendHomePhone" placeholder= "Home Phone Number" autocomplete=off pattern="[\s0-9-()]+" maxlength="15" title="Must contain numbers and can contain brackets, spaces and hyphen " disabled required/>
+                    </p>
+                    <p>
+                        <input class="button" type = "submit" value = "Submit"/>
+                    </p>
+                </form>
+            </main>
+        </div>
     </body>
+    <script src="../assets/js/date.js"></script>
 </html>

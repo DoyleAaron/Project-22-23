@@ -15,12 +15,12 @@ while ($row = mysqli_fetch_array($result)) {
     $lastName = $row['lastName'];
     $surgAddress = $row['surgeryAddress'];
     $surgPhone = $row['surgeryTelephone'];
-    $mobPhone = $row['mobileTelephone'];
+    $mobPhone = $row['mobileNumber'];
     $homeAddress = $row['homeAddress'];
     $homePhone = $row['homeTelephone'];
 
-    $all = "$id, $firstName, $lastName, $surgAddress, $surgPhone, $mobPhone, $homeAddress, $homePhone";
-    echo "<option value= '$all'> $name </option>";
+    $all = "$id+ $firstName+ $lastName+ $surgAddress+ $surgPhone+ $mobPhone+ $homeAddress+ $homePhone";
+    echo "<option value= '$all'> Dr. $lastName </option>";
 }
 
 echo "</select>";

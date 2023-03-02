@@ -181,21 +181,17 @@ main form .buttons button {
     font-size: 16px;
 }
 
-.error-container {
+.err {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0 0 0;
 }
 
-.error {
-    width: 100%;
-    color: red;
-    text-align: center;
+.err .success {
+    color: #00A651;
 }
 
-.success {
-    width: 100%;
-    color: green;
-    text-align: center;
+.err .fail {
+    color: #FF0000;
 }

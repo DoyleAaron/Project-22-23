@@ -1,79 +1,63 @@
-let address = document.getElementById("address");
-let email = document.getElementById("email");
-let website = document.getElementById("website");
-let telephone = document.getElementById("telephone");
+    const select = document.getElementById('select');
+    const amendButton = document.getElementById('amend');
+    const saveButton = document.getElementById('save');
 
-let toggleEditButton = document.getElementById("buttonAmend");
-let submitEditButton = document.getElementById("submitAmend");
+    init();
 
-init();
+    function init() {
+        change();
+        saveButton.style.display = 'none';
+    }
 
-function init() {
-    if (localStorage.getItem('editing') === "1") {
-        address.disabled = false;
-        email.disabled = false;
-        website.disabled = false;
-        telephone.disabled = false;
-        submitEditButton.style.display = "block";
-        toggleEditButton.innerHTML = "Disable Editing";
+    function change() {
+        const info = select.value.split("|");
+        const id = info[0];
+        const name = info[1];
+        const address = info[2];
+        const email = info[3];
+        const website = info[4];
+        const telephone = info[5];
+
+        document.getElementById('id').value = id;
+        document.getElementById('name').value = name;
+        document.getElementById('address').value = address;
+        document.getElementById('email').value = email;
+        document.getElementById('website').value = website;
+        document.getElementById('telephone').value = telephone;
+    }
+
+    function toggle() {
+        if (amendButton.innerHTML === 'Amend') {
+            saveButton.style.display = 'block';
+            amendButton.innerHTML = 'View';
+
+            document.getElementById('name').disabled = false;
+            document.getElementById('address').disabled = false;
+            document.getElementById('email').disabled = false;
+            document.getElementById('website').disabled = false;
+            document.getElementById('telephone').disabled = false;
+        } else {
+            saveButton.style.display = 'none';
+            amendButton.innerHTML = 'Amend';
+
+            document.getElementById('name').disabled = true;
+            document.getElementById('address').disabled = true;
+            document.getElementById('email').disabled = true;
+            document.getElementById('website').disabled = true;
+            document.getElementById('telephone').disabled = true;
+        }
+    }
+
+function confirmSave() {
+    if (confirm('Are you sure you want to save these changes?')) {
+        document.getElementById('id').disabled = false;
+        document.getElementById('select').disabled = true;
+        document.forms['form'].submit();
+        document.getElementById('id').disabled = true;
+        document.getElementById('select').disabled = false;
         return;
     }
 
-    address.disabled = true;
-    email.disabled = true;
-    website.disabled = true;
-    telephone.disabled = true;
-    submitEditButton.style.display = "none";
-    toggleEditButton.innerHTML = "Enable Editing";
-
-}
-
-function toggleEdit() {
-    // Enable editing
-    if (address.disabled) {
-        address.disabled = false;
-        email.disabled = false;
-        website.disabled = false;
-        telephone.disabled = false;
-        toggleEditButton.innerHTML = "Disable Editing";
-        submitEditButton.style.display = "block";
-        localStorage.setItem('editing', "1")
-    } else { // Disable editing
-        address.disabled = true;
-        email.disabled = true;
-        website.disabled = true;
-        telephone.disabled = true;
-        toggleEditButton.innerHTML = "Enable Editing";
-        submitEditButton.style.display = "none";
-        localStorage.setItem('editing', "0")
-    }
-}
-
-/*
-This function is used to have a separate pop-up confirmation for the submit button.
-This is because the submit button is not a part of the form, but is instead a button
-that is used to submit the form.
-
-The function creates a hidden input element, appends it to the form, submits the form,
-then removes the hidden input element.
-
-This has to be done because the PHP code checks if the post request contains the value 'submit-amend'
-to determine if the form was submitted by the submit button or the save button. The button itself is not posted,
-so this was the solution I came up with.
-
-Although I'm sure there's probably a better way to do this, this works for now.
- */
-function confirmSubmit() {
-
-    if (window.confirm("Are you sure you want to submit these changes?")) {
-        let form = document.forms["form"];
-        let hiddenInput = document.createElement("input");
-        hiddenInput.setAttribute("type", "hidden");
-        hiddenInput.setAttribute("name", "submit-amend");
-
-        form.append(hiddenInput);
-        form.submit();
-        form.removeChild(hiddenInput);
-    }
-
+    change();
+    toggle();
 }

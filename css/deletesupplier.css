@@ -123,50 +123,75 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 main form {
-    padding: 40px;
     border: solid black;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 20%;
+    padding: 40px;
+    width: 30%;
 }
 
 main form h1 {
     text-align: center;
+    margin: 0 0 30px 0; /* T R B L */
 }
 
-main form .group {
+main form .info {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-main form .group select {
-    padding: 10px;
+main form .info input {
+    padding: 5px;
+    width: calc(var(--input-width) - 14px);
 }
 
-main form button {
+main form .info select {
+    padding: 5px;
+    width: 60%;
+}
+
+main form .buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+main form .buttons .amend-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main form .buttons .amend-buttons button {
+    width: 100%;
+}
+
+main form .buttons button {
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
-    background-color: var(--cool-blue);
     color: white;
-    font-size: 16px;
+    background: var(--cool-blue);
+    padding: 10px;
+    margin: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.error, .success {
-    text-align: center;
+.err {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0 0;
 }
 
-.error {
-    color: red;
+.err .success {
+    color: #00A651;
 }
 
-.success {
-    color: green;
+.err .fail {
+    color: #FF0000;
 }

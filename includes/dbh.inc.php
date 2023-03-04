@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $username = "root";
-$password = "";
-$database = "mydb";
+$password = "E=mcsquared3.1412pi";
+$database = "college";
 
 /**
  * Create connection

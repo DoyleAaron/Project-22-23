@@ -61,7 +61,6 @@ if (!isset($_SESSION)) {
                         $website = $row['website'];
                         $telephone = $row['telephone'];
                         $infoString = $id . "|" . $name . "|" . $address . "|" . $email . "|" . $website . "|" . $telephone;
-                        $infoString = htmlspecialchars($infoString);
                         echo "<option value=\"$infoString\">$name</option>";
                     }
 
@@ -96,7 +95,7 @@ if (!isset($_SESSION)) {
 
             <div class="info">
                 <label for="telephone">Telephone </label>
-                <input type="text" name="telephone" id="telephone" pattern="\d{9,}" disabled required>
+                <input type="text" name="telephone" id="telephone" pattern="\d{9,12}" disabled required>
             </div>
 
             <div class="buttons">

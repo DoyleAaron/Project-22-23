@@ -38,39 +38,79 @@ include_once('includes/dbh.inc.php');
         <a href="suppliers.php" class="selected">Supplier</a>
     </div>
     <main>
-        <form name="form" action="includes/deletesupplier.inc.php" method="post">
-            <h1>Delete Supplier</h1>
-            <div class="group">
-                <label for="suppliers">Supplier </label>
-                <?php
-                $sql = "SELECT supplierID, supplierName FROM suppliers WHERE deleted = 0;";
-                $stmt = $conn->prepare($sql);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                if ($result->num_rows > 0) {
-                    echo '<select name="suppliers" id="suppliers">';
+        <form name="form" action="includes/deletesupplier.inc.php" method="post" class="info-wrapper" ">
+            <div class="info">
+                <label for="select">Supplier </label>
+                <select name="select" id="select" onchange="change()">
+                    <?php
+
+                    $stmt = $conn->prepare("SELECT * FROM Suppliers WHERE deleted = 0");
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
                     while ($row = $result->fetch_assoc()) {
-                        echo "<option value='" . $row['supplierID'] . "'>" . $row['supplierName'] . "</option>";
+                        $id = $row['supplierID'];
+                        $name = $row['supplierName'];
+                        $address = $row['address'];
+                        $email = $row['email'];
+                        $website = $row['website'];
+                        $telephone = $row['telephone'];
+                        $infoString = $id . "|" . $name . "|" . $address . "|" . $email . "|" . $website . "|" . $telephone;
+                        echo "<option value=\"$infoString\">$name</option>";
                     }
-                } else {
-                    echo '<select name="suppliers" id="suppliers" disabled>';
-                    echo "<option value=''>No suppliers found</option>";
+
+                    ?>
+                </select>
+            </div>
+
+            <div class="info">
+                <label for="id">ID </label>
+                <input type="text" name="id" id="id" disabled>
+            </div>
+
+            <div class="info">
+                <label for="name">Name </label>
+                <input type="text" name="name" id="name" disabled>
+            </div>
+
+            <div class="info">
+                <label for="address">Address </label>
+                <input type="text" name="address" id="address" disabled>
+            </div>
+
+            <div class="info">
+                <label for="email">Email </label>
+                <input type="email" name="email" id="email" disabled>
+            </div>
+
+            <div class="info">
+                <label for="website">Website </label>
+                <input type="url" name="website" id="website" disabled>
+            </div>
+
+            <div class="info">
+                <label for="telephone">Telephone </label>
+                <input type="text" name="telephone" id="telephone" pattern="\d{9,12}" disabled>
+            </div>
+
+            <div class="buttons">
+                <div class="amend-buttons">
+                    <button onclick="confirmDelete()" type="button" name="delete" class="delete">Delete</button>
+                    <button type="submit" name="submitted" id="hidden"></button>
+                </div>
+            </div>
+
+            <div class="err">
+                <?php
+                if (isset($_GET['delete'])) {
+                    if ($_GET['delete'] == "success") {
+                        echo "<p class='success'>Deletion successful.</p>";
+                    } else if ($_GET['delete'] == "failed") {
+                        echo "<p class='fail'>Supplier was not deleted.</p>";
+                    }
                 }
-                echo '</select>';
                 ?>
             </div>
-            <button type="button" id="delete" name="delete" onclick="submitForm()">Delete</button>
-            <?php
-
-            if (isset($_GET['error'])) {
-                if ($_GET['error'] == "success") {
-                    echo "<p class='success'>Supplier deleted successfully!</p>";
-                } else if ($_GET['error'] == "unknownSupplier") {
-                    echo "<p class='error'>Supplier not found.</p>";
-                }
-            }
-
-            ?>
         </form>
     </main>
 </div>

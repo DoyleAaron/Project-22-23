@@ -126,11 +126,11 @@ main {
 }
 
 main .box-container {
-    display: grid;
-    grid-template-columns: repeat(2, 200px);
-    grid-template-rows: repeat(2, 200px);
-    grid-column-gap: 8px;
-    grid-row-gap: 8px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 main .box-container a {
@@ -140,9 +140,17 @@ main .box-container a {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    width: 30%;
+    margin: 10px 0;
+    transition: 0.2s all ease-in-out;
 }
 
 main .box-container .box p {
     color: var(--bg-sect-div);
     font-size: 24px;
+}
+
+main .box-container a:hover {
+    transition: 0.2s all ease-in-out;
+    background-color: #0886d7;
 }

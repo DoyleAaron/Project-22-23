@@ -25,7 +25,7 @@
 </div>
 <div class="main-container">
     <div class="vertical-nav">
-        <a href="#">Drugs</a>
+        <a href="#`">Drugs</a>
         <a href="#">Stock Control</a>
         <a href="#">Doctor</a>
         <a href="#">Customer</a>

@@ -7,7 +7,7 @@ include '../assets/php/db_connection.php';
  -->
  <script>
     function populate(){
-        var sel = document.getElementById("listbox");
+        var sel = document.getElementById("ListBox");
         var result;
         result = sel.options[sel.selectedIndex].value;
         var customerDetails = result.split(',');
@@ -93,10 +93,8 @@ include '../assets/php/db_connection.php';
         </div>
         <main>
             <h2>Amend or View Customer</h2>
-            <?php
-             include 'Listbox.php'; 
-             ?>
-            f<p id="Display"></p>
+            <?php include 'ListBox.php'; ?>
+            <p id="Display"></p>
                 <input type="button" class="button" value="Amend Details" id="amendViewbutton" onclick="toggleLock()">
 
                 <form name="myForm" action="AmendCustomer.php" onsubmit="return confirmCheck()" method="post">
@@ -111,16 +109,16 @@ include '../assets/php/db_connection.php';
                 <input type = "text" name = "amendsecondName" id = "amendsecondName" placeholder="Second Name" required disabled>
 
                 <label for "amendcustomerAddress">Customer Address</label>
-                <input type = "text" name = "amendcustomerAddress" id = "amendcustomerAddress" placeholder="Customer Address" disabled>
+                <input type = "text" name = "amendcustomerAddress" id = "amendcustomerAddress" placeholder="Customer Address" 					disabled>
 
                 <label for "amenddob">Date Of Birth</label>
-                <input type = "date" name = "amenddob" id = "amenddob" placeholder="Date Of Birth" title="format is dd-mm-yyyy" disabled>
+                <input type = "date" name = "amenddob" id = "amenddob" placeholder="Date Of Birth" title="format is dd-mm-yyyy" 				disabled>
 
                 <label for "amendtelephoneNumber">Telephone Number</label>
-                <input type = "number" name = "amendtelephoneNumber" id = "amendtelephoneNumber" placeholder="Telephone Number" pattern="[\s0-9-()]+" disabled>
+                <input type = "number" name = "amendtelephoneNumber" id = "amendtelephoneNumber" placeholder="Telephone Number" 				pattern="[\s0-9-()]+" disabled>
 
                 <label for "amendPPSN">PPSN Number</label>
-                <input type = "number" name = "amendPPSN" id = "amendPPSN" placeholder="PPSN Number" pattern="^[0-9]{7}[A-Za-z]$" disabled>
+                <input type = "number" name = "amendPPSN" id = "amendPPSN" placeholder="PPSN Number" pattern="^[0-9]{7}[A-Za-z]$" 				  disabled>
 
                 <input type="submit" class = "button" value="Save Changes">
         </form>

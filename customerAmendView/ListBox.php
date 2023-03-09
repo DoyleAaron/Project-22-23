@@ -4,12 +4,12 @@ date_default_timezone_set('UTC');
 
 $sql = "SELECT * FROM Customer WHERE Deleted = false";
 
-if(!$result = mysqli_query($con, $sql))
+if(!$result = mysqli_query($conn, $sql))
 {
-    die('Error in querying the database' . mysqli_error($con));
+    die('Error in querying the database' . mysqli_error($conn));
 }
 
-echo "<br><select name='listbox' id='listbox' onclick='populate()'>";
+echo "<br><select name='ListBox' id='ListBox' onclick='populate()'>";
 
 while($row = mysqli_fetch_array($result))
 {
@@ -26,6 +26,6 @@ while($row = mysqli_fetch_array($result))
 }
 
 echo "</select>";
-mysqli_close($con);
+mysqli_close($conn);
 
 ?>

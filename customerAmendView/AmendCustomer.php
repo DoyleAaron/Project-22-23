@@ -11,7 +11,7 @@ $sql = "UPDATE Customer SET firstName = '$_POST[amendfirstName]',
         telephoneNumber = '$_POST[amendtelephoneNumber]',
         PPSN = '$_POST[amendPPSN]' WHERE customerID = '$_POST[amendcustomerID]'";
      
-if(! mysqli_query($con, $sql)){
+if(! mysqli_query($conn, $sql)){
     echo "Error ".mysqli_error($conn);
 } else{
     if(mysqli_affected_rows($conn) !=0){

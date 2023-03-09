@@ -5,7 +5,7 @@ $password = "V1tam1nC;23";
 $database = "BigPharma";
 
 // Create connection
-$conn = new mysqli($host, $username, $password);
+$conn = new mysqli($host, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {

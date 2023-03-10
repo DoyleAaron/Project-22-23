@@ -15,7 +15,7 @@ if(! mysqli_query($conn, $sql)){
     echo "Error ".mysqli_error($conn);
 } else{
     if(mysqli_affected_rows($conn) !=0){
-        echo "The records for <br> ". $_POST['amendfirstName']. " " . $_POST['amendsecondName'] . " has been updated";
+        echo "The records for <br> ". $_POST['amendfirstName']. " ".   $_POST['amendsecondName'] . " has been updated";
     } else{
         echo "No records were changed";
     }

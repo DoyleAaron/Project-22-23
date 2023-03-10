@@ -2,17 +2,18 @@
 include '../assets/php/db_connection.php';
 date_default_timezone_set('UTC');
 
-$sql = "SELECT * FROM Customer WHERE Deleted = false";
+$sql = "SELECT * FROM Customer WHERE deleted = false";
 
 if(!$result = mysqli_query($conn, $sql))
 {
-    die('Error in querying the database' . mysqli_error($conn));
+    die('Error when querying the database' . mysqli_error($conn));
 }
 
-echo "<br><select name='ListBox' id='ListBox' onclick='populate()'>";
+echo "<br><select name='listbox' id='listbox' onclick='populate()'>";
 
 while($row = mysqli_fetch_array($result))
 {
+	$customerID = $row['customerID'];
     $firstName = $row['firstName'];
     $secondName = $row['secondName'];
     $customerAddress = $row['customerAddress'];
@@ -21,8 +22,8 @@ while($row = mysqli_fetch_array($result))
     $telephoneNumber = $row['telephoneNumber'];
     $PPSN = $row['PPSN'];
 	
-    $allText = "$firstName,$secondName,$customerAddress,$dob,$telephoneNumber,$PPSN";
-    echo "<option value = '$allText'>$firstName . $secondName </option>";
+    $allText = "$customerID,$firstName,$secondName,$customerAddress,$dob,$telephoneNumber,$PPSN";
+    echo "<option value = '$allText'>$firstName  $secondName </option>";
 }
 
 echo "</select>";

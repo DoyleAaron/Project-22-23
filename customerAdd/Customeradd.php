@@ -51,9 +51,10 @@ include '../assets/php/db_connection.php';
             <a href="#">Supplier</a>
         </div>
         <main>
-            <div class = "addcustbox">
+        <div class = "addcustbox">
             <H2 align ="center" font="open sans">Add Customer</H2>
             <form action="CustomerUpload.php" method="post" align="center" onsubmit= "return confirmation()">
+               
                 <div class="inputbox">
                     <label for="firstname">First Name</label>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>

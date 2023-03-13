@@ -32,12 +32,11 @@ include '../assets/php/db_connection.php';
     </div>
     <div class="main-container">
         <div class="vertical-nav">
-            <a href="#" class="selected">Customer</a>
-            <a href="#">Dispense Drugs</a>
+            <a href="#">Drugs</a>
             <a href="#">Stock Control</a>
-            <a href="#">Supplier Accounts</a>
-            <a href="#">File Maintenance</a>
-            <a href="#">Reports</a>
+            <a href="#">Doctor</a>
+            <a href="#" class="selected">Customer</a>
+            <a href="#">Supplier</a>
         </div>
         <main>
             

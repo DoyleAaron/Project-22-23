@@ -1,10 +1,6 @@
 <?php
 include '../assets/php/db_connection.php';
 ?>
-
-<!-- 
-    Icons obtained from https://remixicon.com/ and https://fonts.google.com/icons 
- -->
  <script>
     function populate(){
         var sel = document.getElementById("listbox");
@@ -95,7 +91,6 @@ include '../assets/php/db_connection.php';
             <div class="amendBox">
             <h2>Amend or View Customer</h2>
             <?php include 'listbox.php'; ?>
-            <p id="Display"></p>
                 <input type="button" class="buttoncss" value="Amend Details" id="amendViewbutton" onclick="toggleLock()">
 
                 <form name="myForm" action="AmendCustomer.php" onsubmit="return confirmCheck()" method="post">
@@ -137,10 +132,10 @@ include '../assets/php/db_connection.php';
                 <label for "amendPPSN">PPSN Number</label>
                 <input type = "text" name = "amendPPSN" id = "amendPPSN" placeholder="PPSN Number" pattern="^[0-9]{7}[A-Za-z]$" disabled>
                 </div>
-                
+
                 <input type="submit" class = "buttoncss" value="Save Changes">
         </form>
-            </div>
+        </div>
         </main>
     </div>
 </body>

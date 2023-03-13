@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // This redirects the user back to the screen
 
 mysqli_close($conn) ;
-
-
 ?>
+<form action="Customeradd.php" method="post">
+
+<input type="submit" value="Return to Previous Screen">
+</form>

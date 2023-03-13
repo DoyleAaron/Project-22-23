@@ -86,7 +86,7 @@ include '../assets/php/db_connection.php';
 
                 <div class="inputbox">
                     <label for="ppsn">PPSN</label>
-                    <input type="text" name="ppsn" id="ppsn" placeholder="PPSN" pattern="^[0-9]{7}[A-Za-z]$" title="PPSN must be 7 numbers followed by a letter" required >
+                    <input type="text" name="ppsn" id="ppsn" placeholder="PPSN" pattern="^[0-9]{7}[A-Za-z]{1,2}" title="PPSN must be 7 numbers followed by one or two letters" required >
                     <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
                 </div>
                 

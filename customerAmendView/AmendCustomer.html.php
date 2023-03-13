@@ -92,36 +92,55 @@ include '../assets/php/db_connection.php';
             <a href="#">Reports</a>
         </div>
         <main>
+            <div class="amendBox">
             <h2>Amend or View Customer</h2>
             <?php include 'listbox.php'; ?>
             <p id="Display"></p>
-                <input type="button" class="button" value="Amend Details" id="amendViewbutton" onclick="toggleLock()">
+                <input type="button" class="buttoncss" value="Amend Details" id="amendViewbutton" onclick="toggleLock()">
 
                 <form name="myForm" action="AmendCustomer.php" onsubmit="return confirmCheck()" method="post">
 
-                <label for "amendcustomerID">Customer Id</label>
+                <div class="inputbox">
+                <label for "amendcustomerID" >Customer Id</label>
                 <input type = "number" name = "amendcustomerID" id = "amendcustomerID" placeholder="Customer ID" disabled>
+                </div>
 
+
+                <div class="inputbox">
                 <label for "amendfirstName">First Name</label>
                 <input type = "text" name = "amendfirstName" id = "amendfirstName" placeholder="First Name" required disabled>
+                </div>
 
+
+                <div class="inputbox">
                 <label for "amendsecondName">Second Name</label>
                 <input type = "text" name = "amendsecondName" id = "amendsecondName" placeholder="Second Name" required disabled>
+                </div>
 
+
+                <div class="inputbox">
                 <label for "amendcustomerAddress">Customer Address</label>
-                <input type = "text" name = "amendcustomerAddress" id = "amendcustomerAddress" placeholder="Customer Address" 					disabled>
+                <input type = "text" name = "amendcustomerAddress" id = "amendcustomerAddress" placeholder="Customer Address" disabled>
+                </div>
 
+                <div class="inputbox">
                 <label for "amenddob">Date Of Birth</label>
-                <input type = "date" name = "amenddob" id = "amenddob" placeholder="Date Of Birth" title="format is dd-mm-yyyy" 				disabled>
+                <input type = "date" name = "amenddob" id = "amenddob" placeholder="Date Of Birth" title="format is dd-mm-yyyy" disabled>
+                </div>
 
+                <div class="inputbox">
                 <label for "amendtelephoneNumber">Telephone Number</label>
-                <input type = "text" name = "amendtelephoneNumber" id = "amendtelephoneNumber" placeholder="Telephone Number" 				pattern="[\s0-9-()]+" disabled>
+                <input type = "text" name = "amendtelephoneNumber" id = "amendtelephoneNumber" placeholder="Telephone Number" pattern="[\s0-9-()]+" disabled>
+                </div>
 
+                <div class="inputbox">
                 <label for "amendPPSN">PPSN Number</label>
-                <input type = "text" name = "amendPPSN" id = "amendPPSN" placeholder="PPSN Number" pattern="^[0-9]{7}[A-Za-z]$" 				  disabled>
-
-                <input type="submit" class = "button" value="Save Changes">
+                <input type = "text" name = "amendPPSN" id = "amendPPSN" placeholder="PPSN Number" pattern="^[0-9]{7}[A-Za-z]$" disabled>
+                </div>
+                
+                <input type="submit" class = "buttoncss" value="Save Changes">
         </form>
+            </div>
         </main>
     </div>
 </body>

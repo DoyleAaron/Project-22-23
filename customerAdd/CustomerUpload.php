@@ -34,7 +34,7 @@ while($row = mysqli_fetch_array($result)){
 $new_id = $last_id + 1;
 
 $sql = "Insert into Customer(customerID, firstName, secondName, dob, customerAddress, telephoneNumber, PPSN)
-VALUES ('$new_id ', $firstname','$surname','$dob','$address','$phonenum','$ppsn')";
+VALUES ('$new_id','$firstName','$secondName','$dob','$customerAddress','$telephoneNumber','$PPSN')";
 // Here I am inserting the data entered by the user into the mySql database using the posted details that i did earlier
 
 if (!mysqli_query($conn, $sql) ){
@@ -42,8 +42,11 @@ if (!mysqli_query($conn, $sql) ){
 }
 // This if statement is checking to see if either of the funcions do not go ahead , it will then give out an error code
 
-echo "<br>A record has been added for Customer " . $_POST['firstname'] . " " . $_POST['surname'];
-// This is to let the user know that a Customer has been added to the database
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    header("Location: Customeradd.php");
+    exit();
+}
+// This redirects the user back to the screen
 
 mysqli_close($conn) ;
 

@@ -27,7 +27,10 @@ include '../assets/php/db_connection.php';
         document.getElementsById("delid").value = personDetails[0];
         document.getElementsById("delfirstname").value = personDetails[1];
         document.getElementsById("dellastname").value = personDetails[2];
-        document.getElementsById("deldob").value = personDetails[3]; 
+        document.getElementsById("delcustaddress").value = personDetails[3];
+        document.getElementsById("deldob").value = personDetails[4]; 
+        document.getElementsById("delphonenum").value = personDetails[5];
+        document.getElementsById("delppsn").value = personDetails[6];  
     }
     function confirmCheck(){
         var response;
@@ -36,7 +39,10 @@ include '../assets/php/db_connection.php';
         document.getElementsById("delid").disabled = false;
         document.getElementsById("delfirstname").disabled = false;
         document.getElementsById("dellastname").disabled = false;
-        document.getElementsById("deldob").disabled = false; 
+        document.getElementsById("delcustaddress").disabled = false; 
+        document.getElementsById("deldob").disabled = false;
+        document.getElementsById("delphonenum").disabled = false;
+        document.getElementsById("delppsn").disabled = false;  
         return true;
         } else{
             populate();
@@ -70,14 +76,27 @@ include '../assets/php/db_connection.php';
         <h4>Please select a person and then click the delete button</h4>
         <form name="deleteForm" action="delete.php" onsubmit="return confirmCheck()" method="post">
 
-            <label for="delid">Person ID</label>
+            <label for="delid">Customer ID</label>
             <input type="text" name="delid" id="delid" disabled>
+
             <label for="delfirstname">First Name</label>
             <input type="text" name="delfirstname" id="delfirstname" disabled>
+
             <label for="dellastname">Last Name</label>
             <input type="text" name="dellastname" id="dellastname" disabled>
+
+            <label for="delcustaddress">Customer Address</label>
+            <input type="text" name="delcustaddress" id="delcustaddress" disabled>
+
             <label for="delDOB">Date of Birth</label>
             <input type="text" name="delDOB" id="delDOB" title="format is dd-mm-yyyy" disabled>
+
+            <label for="delphonenum">Phone Number</label>
+            <input type="text" name="delphonenum" id="delphonenum" disabled>
+
+            <label for="delppsn">PPSN</label>
+            <input type="text" name="delppsn" id="delppsn" disabled>
+
             <br><br>
             <input type="submit" value="Delete the record">
         </main>

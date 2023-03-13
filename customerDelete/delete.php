@@ -18,7 +18,7 @@
     $_SESSION["customerAddress"] = $_POST['delcustaddress'];
     $_SESSION["dob"] = $_POST['deldob'];
     $_SESSION["telephoneNumber"] = $_POST['delphonenum'];
-    $_SESSION["PPSN"] = $_POST['delPPSN'];
+    $_SESSION["PPSN"] = $_POST['delppsn'];
 
     mysqli_close($con);
 

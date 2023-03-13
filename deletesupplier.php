@@ -2,6 +2,8 @@
 include_once('includes/dbh.inc.php');
 ?>
 
+// TODO: Do not delete if there is a current order w/ supplier or there is a stock item from supplier in the stocks table
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

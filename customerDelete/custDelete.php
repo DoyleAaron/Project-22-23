@@ -24,25 +24,25 @@ include '../assets/php/db_connection.php';
         result = sel.options[sel.selectedIndex].value;
         var personDetails = result.split(',');
         document.getElementById("display").innerHTML = "The details of the selected person are: " + result;
-        document.getElementsById("delid").value = personDetails[0];
-        document.getElementsById("delfirstname").value = personDetails[1];
-        document.getElementsById("dellastname").value = personDetails[2];
-        document.getElementsById("delcustaddress").value = personDetails[3];
+        document.getElementsById("delID").value = personDetails[0];
+        document.getElementsById("delfirstName").value = personDetails[1];
+        document.getElementsById("delsecondName").value = personDetails[2];
+        document.getElementsById("delcustomerAddress").value = personDetails[3];
         document.getElementsById("deldob").value = personDetails[4]; 
-        document.getElementsById("delphonenum").value = personDetails[5];
-        document.getElementsById("delppsn").value = personDetails[6];  
+        document.getElementsById("deltelephoneNumber").value = personDetails[5];
+        document.getElementsById("delPPSN").value = personDetails[6];  
     }
     function confirmCheck(){
         var response;
         response = confirm('Are you sure you want to delete this person?');
         if(repsonse){
-        document.getElementsById("delid").disabled = false;
-        document.getElementsById("delfirstname").disabled = false;
-        document.getElementsById("dellastname").disabled = false;
-        document.getElementsById("delcustaddress").disabled = false; 
+        document.getElementsById("delID").disabled = false;
+        document.getElementsById("delfirstName").disabled = false;
+        document.getElementsById("delsecondName").disabled = false;
+        document.getElementsById("delcustomerAddress").disabled = false; 
         document.getElementsById("deldob").disabled = false;
-        document.getElementsById("delphonenum").disabled = false;
-        document.getElementsById("delppsn").disabled = false;  
+        document.getElementsById("deltelephoneNumber").disabled = false;
+        document.getElementsById("delPPSN").disabled = false;  
         return true;
         } else{
             populate();
@@ -79,23 +79,23 @@ include '../assets/php/db_connection.php';
             <label for="delid">Customer ID</label>
             <input type="text" name="delid" id="delid" disabled>
 
-            <label for="delfirstname">First Name</label>
-            <input type="text" name="delfirstname" id="delfirstname" disabled>
+            <label for="delfirstName">First Name</label>
+            <input type="text" name="delfirstName" id="delfirstName" disabled>
 
-            <label for="dellastname">Last Name</label>
-            <input type="text" name="dellastname" id="dellastname" disabled>
+            <label for="delsecondName">Last Name</label>
+            <input type="text" name="delsecondName" id="delsecondName" disabled>
 
-            <label for="delcustaddress">Customer Address</label>
-            <input type="text" name="delcustaddress" id="delcustaddress" disabled>
+            <label for="delcustomerAddress">Customer Address</label>
+            <input type="text" name="delcustomerAddress" id="delcustomerAddress" disabled>
 
-            <label for="delDOB">Date of Birth</label>
-            <input type="text" name="delDOB" id="delDOB" title="format is dd-mm-yyyy" disabled>
+            <label for="deldob">Date of Birth</label>
+            <input type="text" name="deldob" id="deldob" title="format is dd-mm-yyyy" disabled>
 
-            <label for="delphonenum">Phone Number</label>
-            <input type="text" name="delphonenum" id="delphonenum" disabled>
+            <label for="deltelephoneNumber">Phone Number</label>
+            <input type="text" name="deltelephoneNumber" id="deltelephoneNumber" disabled>
 
-            <label for="delppsn">PPSN</label>
-            <input type="text" name="delppsn" id="delppsn" disabled>
+            <label for="delPPSN">PPSN</label>
+            <input type="text" name="delPPSN" id="delPPSN" disabled>
 
             <br><br>
             <input type="submit" value="Delete the record">

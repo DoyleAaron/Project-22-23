@@ -1,13 +1,7 @@
 <?php
-include '../assets/php/db_connection.php';
+include '../../assets/php/db_connection.php';
 
 date_default_timezone_set ("UTC");
-
-$sql = "use BigPharma;";
-
-if (!mysqli_query($conn, $sql) ){
-    die ("An Error in the SQL Query: " . mysqli_error($conn));
-}
 
 $sql = "SELECT MAX(doctorID) AS id FROM Doctor";
 
@@ -24,15 +18,12 @@ if (!mysqli_query($conn, $sql) ){
     die ("An Error in the SQL Query: " . mysqli_error($conn));
 }
 
-
-
 echo "<br>A record has been added for Dr. " . $_POST['surname'];
 
-mysqli_close($conn) ;
-
+mysqli_close($conn);
 
 ?>
 
-<form action = "AddDoctor.php" method = "post">
-    <input type = "submit" value = "Return to previous page">
-</form>
+<script>
+    window.location = "DoctorInsert.html.php"
+</script>

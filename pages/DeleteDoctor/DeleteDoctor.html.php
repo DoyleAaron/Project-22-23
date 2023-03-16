@@ -109,7 +109,7 @@ include '../../assets/php/db_connection.php';
                 <?php
                 if(ISSET($_SESSION["doctorID"])){
                     echo "<h1 class='myMessage'>Record deleted for " . 
-                    $_SESSION["firstName"] . " " . $_SESSION["lastName"] . "</h1>";
+                    $_SESSION["DelFirstname"] . " " . $_SESSION["DelSurname"] . "</h1>";
                 }
                 ?>
             </main>

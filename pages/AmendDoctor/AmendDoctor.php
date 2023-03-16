@@ -25,6 +25,6 @@
 
     ?>
 
-    <form action = "EditDoctor.php" method = "post">
+    <form action = "AmendDoctor.html.php" method = "post">
     <input type = "submit" value = "Return to previous page">
     </form>

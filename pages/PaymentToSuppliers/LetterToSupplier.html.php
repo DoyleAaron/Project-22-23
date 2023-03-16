@@ -54,7 +54,7 @@ include '../../assets/php/db_connection.php';
                 </div>
                 <div>
                     <?php
-                        $sql = "SELECT supplierName FROM Suppliers WHERE supplierID = '$_POST[SupId]' AND PAID = 0";
+                        $sql = "SELECT supplierName FROM Suppliers WHERE supplierID = '$_POST[SupId]'";
 
                         if(!$result = mysqli_query($conn, $sql)){
                             die("Error in query " . mysqli_error($conn));
@@ -81,7 +81,7 @@ include '../../assets/php/db_connection.php';
                     <div class = "grid-container-child">
                         <b>Your invoive Reference</b><br>
                         <?php
-                            $sql = "SELECT orderID FROM Orders WHERE supplierID = '$_POST[SupId]'";
+                            $sql = "SELECT orderID FROM Orders WHERE supplierID = '$_POST[SupId]' AND paid = 0";
 
                             if(!$result = mysqli_query($conn, $sql)){
                                 die("Error in query " . mysqli_error($conn));
@@ -98,7 +98,7 @@ include '../../assets/php/db_connection.php';
                     <div class = "grid-container-child">
                         <b>Amount</b><br>
                         <?php
-                            $sql = "SELECT cost FROM Orders WHERE supplierID = '$_POST[SupId]'";
+                            $sql = "SELECT cost FROM Orders WHERE supplierID = '$_POST[SupId]' AND paid = 0";
 
                             if(!$result = mysqli_query($conn, $sql)){
                                 die("Error in query " . mysqli_error($conn));
@@ -111,7 +111,7 @@ include '../../assets/php/db_connection.php';
                         <br>
                         <b><?php
                                 $sum = 0;
-                                $sql = "SELECT cost FROM Orders WHERE supplierID = '$_POST[SupId]'";
+                                $sql = "SELECT cost FROM Orders WHERE supplierID = '$_POST[SupId]' AND paid = 0";
 
                                 if(!$result = mysqli_query($conn, $sql)){
                                     die("Error in query " . mysqli_error($conn));
@@ -129,7 +129,10 @@ include '../../assets/php/db_connection.php';
                 </div>
             </div>
             <?php
-                $sql = "UPDATE Orders SET paid = 1 WHERE supplierID = '$_POST[SupId]';"; // set orders as paid
+                $sql = "UPDATE Orders SET paid = 1 WHERE supplierID = '$_POST[SupId]'"; // set orders as paid
+                if(!$result = mysqli_query($conn, $sql)){
+                    die("Error in query " . mysqli_error($conn));
+                }
             ?>
         </main>
     </div>

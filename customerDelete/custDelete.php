@@ -1,3 +1,10 @@
+<!-- 
+Page: custDelete.php
+Name: Aaron Doyle
+StudentID: C00272515
+Date: 17/3/23
+Purpose: This is the screen is seen by the user when they click on the delete customer screen and it allows them to delete a customer from the database as long as they dont have an active prescription
+-->
 <?php
 include '../assets/php/db_connection.php';
 ?>
@@ -30,6 +37,7 @@ include '../assets/php/db_connection.php';
         document.getElementById("deldob").value = customerDetails[4]; 
         document.getElementById("deltelephoneNumber").value = customerDetails[5];
     }
+	// This function is used to populate the form so that the user can select a customer to delete
     function confirmCheck(){
         var response;
         response = confirm('Are you sure you want to delete this person?');
@@ -46,6 +54,7 @@ include '../assets/php/db_connection.php';
             return false;
         }
     }
+	// This function is a pop up that will occur when the user clicks submit just to make sure they meant to click it
 </script>
 <body>
     <div class="horizonal-nav">
@@ -70,47 +79,50 @@ include '../assets/php/db_connection.php';
         </div>
         <main>
 			<div class="form-container">
-        <h1 align="center">Delete A Person</h1>
-        <h4 align="center">Please select a person and then click the delete button</h4>
+        <h1 align="center">Delete A Customer</h1>
+        <h4 align="center">Please select a customer and then click the delete button</h4>
 		<?php include 'listbox.php'; ?>
         <form name="deleteForm" action="delete.php" onsubmit="return confirmCheck()" method="post">
 
 			<div class="inputbox">
-            <label for="delID">Customer ID</label>
-            <input type="text" name="delID" id="delID" disabled>
+				<label for="delID">Customer ID</label>
+				<input type="text" name="delID" id="delID" disabled>
 			</div>
 
 			<div class="inputbox">
-            <label for="delfirstName">First Name</label>
-            <input type="text" name="delfirstName" id="delfirstName" disabled>
+				<label for="delfirstName">First Name</label>
+				<input type="text" name="delfirstName" id="delfirstName" disabled>
 			</div>
 
 			<div class="inputbox">
-            <label for="delsecondName">Last Name</label>
-            <input type="text" name="delsecondName" id="delsecondName" disabled>
+				<label for="delsecondName">Last Name</label>
+				<input type="text" name="delsecondName" id="delsecondName" disabled>
 			</div>
 
 			<div class="inputbox">
-            <label for="delcustomerAddress">Customer Address</label>
-            <input type="text" name="delcustomerAddress" id="delcustomerAddress" disabled>
+				<label for="delcustomerAddress">Customer Address</label>
+				<input type="text" name="delcustomerAddress" id="delcustomerAddress" disabled>
 			</div>
 
 			<div class="inputbox">
-            <label for="deldob">Date of Birth</label>
-            <input type="text" name="deldob" id="deldob" title="format is dd-mm-yyyy" disabled>
+				<label for="deldob">Date of Birth</label>
+				<input type="text" name="deldob" id="deldob" title="format is dd-mm-yyyy" disabled>
 			</div>
 
 			<div class="inputbox">
-            <label for="deltelephoneNumber">Phone Number</label>
-            <input type="text" name="deltelephoneNumber" id="deltelephoneNumber" disabled>
+				<label for="deltelephoneNumber">Phone Number</label>
+				<input type="text" name="deltelephoneNumber" id="deltelephoneNumber" disabled>
 			</div>
-			
 			<br>
+			
             <input type="submit" value="Delete the record" class ="buttoncss" align="center">
-				</form>
+			
+			</form>
+				<a href="../Menu/AaronsMenu.html" class="homeMenu">Return To Menu</a>
 			</div>
         </main>
     </div>
 </body>
+	
     <script src="../assets/js/date.js"></script>
 </html>

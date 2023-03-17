@@ -3,7 +3,8 @@ Page: delete.php
 Name: Aaron Doyle
 StudentID: C00272515
 Date: 17/3/23
-Purpose: This is the code that is used to check if the user has an active prescription in the database and if they dont it will activate the deleted column in the database which will stop them showing up on the system
+Purpose: This is the code that is used to check if the user has an active prescription in the database and if they dont it will activate the deleted 
+column in the database which will stop them showing up on the system
 -->
 <?php 
     session_start();
@@ -21,7 +22,8 @@ Purpose: This is the code that is used to check if the user has an active prescr
     if(mysqli_num_rows($result) > 0){
         echo "This customer has a current prescription and cannot be deleted.";
     } 
-	//This if statement is using the sql statement above and checking if that users id exists in the prescription table and will not 	   delete the user if they do exist in that table, if not then it will proceed to delete the user as normal
+	//This if statement is using the sql statement above and checking if that users id exists in the prescription table and 
+    //will not delete the user if they do exist in that table, if not then it will proceed to delete the user as normal
 	else {
     $sql = "UPDATE Customer SET deleted = 1 WHERE customerID = '$_POST[delID]'";
 	//This line of code is setting the deleted column in the table to 1 instead of zero which will not show their information in any of the other screens on the system

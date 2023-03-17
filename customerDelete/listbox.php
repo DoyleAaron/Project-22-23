@@ -20,9 +20,8 @@ while($row = mysqli_fetch_array($result))
     $dob = date_create($row['dob']);
     $dob = date_format($dob,"Y-m-d");
     $telephoneNumber = $row['telephoneNumber'];
-    $PPSN = $row['PPSN'];
 	
-    $allText = "$customerID,$firstName,$secondName,$customerAddress,$dob,$telephoneNumber,$PPSN";
+    $allText = "$customerID,$firstName,$secondName,$customerAddress,$dob,$telephoneNumber";
     echo "<option value = '$allText'>$firstName  $secondName </option>";
 }
 

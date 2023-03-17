@@ -5,11 +5,21 @@
 <?php
 
     include '../assets/php/db_connection.php';
+	
+    $customerId = $_POST['delID'];
 
-    $sql = "UPDATE Customer SET deleted = true WHERE customerID = '$_POST[delID]'";
+    $sql = "SELECT * FROM Prescription WHERE customerID = '$customerId'";
+    $result = mysqli_query($conn, $sql);
 
-    if(! mysqli_query($con, $sql)){
-        echo "Error ". mysqli_error($con);
+    if(mysqli_num_rows($result) > 0){
+        echo "This customer has a current prescription and cannot be deleted.";
+    } else {
+
+
+    $sql = "UPDATE Customer SET deleted = 1 WHERE customerID = '$_POST[delID]'";
+
+    if(! mysqli_query($conn, $sql)){
+        echo "Error ". mysqli_error($conn);
     }
 
     $_SESSION["customerID"] = $_POST['delID'];
@@ -18,12 +28,14 @@
     $_SESSION["customerAddress"] = $_POST['delcustomerAddress'];
     $_SESSION["dob"] = $_POST['deldob'];
     $_SESSION["telephoneNumber"] = $_POST['deltelephoneNumber'];
-    $_SESSION["PPSN"] = $_POST['delPPSN'];
+		
+	echo "Record deleted for ".$_POST['delfirstName']. " ". $_POST['delsecondName'];
+	}
 
-    mysqli_close($con);
+    mysqli_close($conn);
 
 ?>
+<form action="custDelete.php" method="post">
 
-<script>
-    window.location = "custDelete.php"
-</script>
+<input type="submit" value="Return To Previous Screen">
+</form>

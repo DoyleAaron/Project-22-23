@@ -22,27 +22,24 @@ include '../assets/php/db_connection.php';
         var sel = document.getElementById("listbox");
         var result;
         result = sel.options[sel.selectedIndex].value;
-        var personDetails = result.split(',');
-        document.getElementById("display").innerHTML = "The details of the selected person are: " + result;
-        document.getElementsById("delID").value = personDetails[0];
-        document.getElementsById("delfirstName").value = personDetails[1];
-        document.getElementsById("delsecondName").value = personDetails[2];
-        document.getElementsById("delcustomerAddress").value = personDetails[3];
-        document.getElementsById("deldob").value = personDetails[4]; 
-        document.getElementsById("deltelephoneNumber").value = personDetails[5];
-        document.getElementsById("delPPSN").value = personDetails[6];  
+        var customerDetails = result.split(',');
+        document.getElementById("delID").value = customerDetails[0];
+        document.getElementById("delfirstName").value = customerDetails[1];
+        document.getElementById("delsecondName").value = customerDetails[2];
+        document.getElementById("delcustomerAddress").value = customerDetails[3];
+        document.getElementById("deldob").value = customerDetails[4]; 
+        document.getElementById("deltelephoneNumber").value = customerDetails[5];
     }
     function confirmCheck(){
         var response;
         response = confirm('Are you sure you want to delete this person?');
-        if(repsonse){
-        document.getElementsById("delID").disabled = false;
-        document.getElementsById("delfirstName").disabled = false;
-        document.getElementsById("delsecondName").disabled = false;
-        document.getElementsById("delcustomerAddress").disabled = false; 
-        document.getElementsById("deldob").disabled = false;
-        document.getElementsById("deltelephoneNumber").disabled = false;
-        document.getElementsById("delPPSN").disabled = false;  
+        if(response){
+        document.getElementById("delID").disabled = false;
+        document.getElementById("delfirstName").disabled = false;
+        document.getElementById("delsecondName").disabled = false;
+        document.getElementById("delcustomerAddress").disabled = false; 
+        document.getElementById("deldob").disabled = false;
+        document.getElementById("deltelephoneNumber").disabled = false;
         return true;
         } else{
             populate();
@@ -72,33 +69,46 @@ include '../assets/php/db_connection.php';
             <a href="#">Supplier</a>
         </div>
         <main>
-        <h1>Delete A Person</h1>
-        <h4>Please select a person and then click the delete button</h4>
+			<div class="form-container">
+        <h1 align="center">Delete A Person</h1>
+        <h4 align="center">Please select a person and then click the delete button</h4>
+		<?php include 'listbox.php'; ?>
         <form name="deleteForm" action="delete.php" onsubmit="return confirmCheck()" method="post">
 
-            <label for="delid">Customer ID</label>
-            <input type="text" name="delid" id="delid" disabled>
+			<div class="inputbox">
+            <label for="delID">Customer ID</label>
+            <input type="text" name="delID" id="delID" disabled>
+			</div>
 
+			<div class="inputbox">
             <label for="delfirstName">First Name</label>
             <input type="text" name="delfirstName" id="delfirstName" disabled>
+			</div>
 
+			<div class="inputbox">
             <label for="delsecondName">Last Name</label>
             <input type="text" name="delsecondName" id="delsecondName" disabled>
+			</div>
 
+			<div class="inputbox">
             <label for="delcustomerAddress">Customer Address</label>
             <input type="text" name="delcustomerAddress" id="delcustomerAddress" disabled>
+			</div>
 
+			<div class="inputbox">
             <label for="deldob">Date of Birth</label>
             <input type="text" name="deldob" id="deldob" title="format is dd-mm-yyyy" disabled>
+			</div>
 
+			<div class="inputbox">
             <label for="deltelephoneNumber">Phone Number</label>
             <input type="text" name="deltelephoneNumber" id="deltelephoneNumber" disabled>
-
-            <label for="delPPSN">PPSN</label>
-            <input type="text" name="delPPSN" id="delPPSN" disabled>
-
-            <br><br>
-            <input type="submit" value="Delete the record">
+			</div>
+			
+			<br>
+            <input type="submit" value="Delete the record" class ="buttoncss" align="center">
+				</form>
+			</div>
         </main>
     </div>
 </body>

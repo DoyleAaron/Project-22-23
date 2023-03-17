@@ -117,4 +117,39 @@ body .vertical-nav a:hover {
 main {
     width: 100%;
     min-height: 100%;
+	align-items: center;
+	padding-top: 50px;
+}
+
+.form-container{
+    display: flex;
+	flex-direction: column;
+    background-color: var(--bg-sect-div);
+    border: 2px black solid;
+    height: 500px;
+    width: 400px;
+    border-radius: 50px;
+    align-items: center;
+	margin: auto;
+	text-align: center;
+}
+
+.inputbox{
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+    margin: 10px;
+}
+
+.buttoncss{
+    border: none;
+    background-color: var(--cool-blue);
+    margin: 4px 10px;
+    border-radius: 10px;
+    padding: 8px 4px;
+	color: white;
+    cursor: pointer;
+    text-align: center;
+	align-items: center;
+	margin: auto;
 }

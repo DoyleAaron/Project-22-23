@@ -1,3 +1,10 @@
+<!-- 
+Page: listbox.php
+Name: Aaron Doyle
+StudentID: C00272515
+Date: 17/3/23
+Purpose: This is the code that is used to populate the Customer information into the form so that the information can be altered
+-->
 <?php
 include '../assets/php/db_connection.php';
 date_default_timezone_set('UTC');
@@ -20,9 +27,8 @@ while($row = mysqli_fetch_array($result))
     $dob = date_create($row['dob']);
     $dob = date_format($dob,"Y-m-d");
     $telephoneNumber = $row['telephoneNumber'];
-    $PPSN = $row['PPSN'];
 	
-    $allText = "$customerID,$firstName,$secondName,$customerAddress,$dob,$telephoneNumber,$PPSN";
+    $allText = "$customerID,$firstName,$secondName,$customerAddress,$dob,$telephoneNumber";
     echo "<option value = '$allText'>$firstName  $secondName </option>";
 }
 

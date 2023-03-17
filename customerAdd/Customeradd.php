@@ -51,10 +51,10 @@ include '../assets/php/db_connection.php';
             <a href="#">Supplier</a>
         </div>
         <main>
-        <div class = "addcustbox">
+            <div class = "addcustbox">
             <H2 align ="center" font="open sans">Add Customer</H2>
             <form action="CustomerUpload.php" method="post" align="center" onsubmit= "return confirmation()">
-               
+				
                 <div class="inputbox">
                     <label for="firstname">First Name</label>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>
@@ -82,12 +82,6 @@ include '../assets/php/db_connection.php';
                 <div class="inputbox">
                     <label for="phonenum">Phone Number  </label>
                     <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
-                    <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
-                </div>
-
-                <div class="inputbox">
-                    <label for="ppsn">PPSN</label>
-                    <input type="text" name="ppsn" id="ppsn" placeholder="PPSN" pattern="^[0-9]{7}[A-Za-z]{1,2}" title="PPSN must be 7 numbers followed by one or two letters" required >
                     <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
                 </div>
                 

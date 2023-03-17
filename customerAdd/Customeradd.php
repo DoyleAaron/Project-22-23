@@ -65,12 +65,12 @@ include '../assets/php/db_connection.php';
 				
                 <div class="inputbox">
                     <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First 					   Name must be only letters and less than 20 characters" maxlength="20" required>
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>
                 </div>
         
                 <div class="inputbox">
                     <label for="surname">Surname</label>
-                    <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]+$" title="Surname must 					  be only letters and less than 20 characters" maxlength="20" required>
+                    <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]+$" title="Surname must be only letters and less than 20 characters" maxlength="20" required>
                 </div>
         
                 <div class="inputbox">
@@ -80,12 +80,12 @@ include '../assets/php/db_connection.php';
 
                 <div class="inputbox">
                     <label for="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="Address" pattern="^[A-Za-z0-9\s]+$" title="Address 					   must only conatin letters and numbers" required >
+                    <input type="text" name="address" id="address" placeholder="Address" pattern="^[A-Za-z0-9\s]+$" title="Address must only conatin letters and numbers" required >
                 </div>
 
                 <div class="inputbox">
                     <label for="phonenum">Phone Number  </label>
-                    <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone 					  Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
+                    <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
                 </div>
                 
                 <div class="buttons">

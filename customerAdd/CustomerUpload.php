@@ -1,6 +1,13 @@
+<!-- 
+Page: CustomerUpload.php
+Name: Aaron Doyle
+StudentID: C00272515
+Date: 17/3/23
+Purpose: This is the screen is used to insert the customer data entered by the user into the Customer table in the database
+-->
 <?php
 include '../assets/php/db_connection.php';
-// This is linking to the conection file to connect to our MySql
+
 
 date_default_timezone_set ("UTC");
 
@@ -29,17 +36,16 @@ while($row = mysqli_fetch_array($result)){
     $last_id = $row['customerID'];
 }
 
-// Then I am adding one to last id to create an auto incrementing feature for the customer id
 $new_id = $last_id + 1;
+// This is now simulating an auto incrementing feature
 
 $sql = "Insert into Customer(customerID, firstName, secondName, dob, customerAddress, telephoneNumber, PPSN)
 VALUES ('$new_id','$firstName','$secondName','$dob','$customerAddress','$telephoneNumber')";
-// Here I am inserting the data entered by the user into the mySql database using the posted details that i did earlier
+// Here I am getting the information that was inputted by the user and putting it into the Customer Table
 
 if (!mysqli_query($conn, $sql) ){
     die ("An Error in the SQL Query: " . mysqli_error($conn));
 }
-// This if statement is checking to see if either of the funcions do not go ahead , it will then give out an error code
 
 mysqli_close($conn) ;
 

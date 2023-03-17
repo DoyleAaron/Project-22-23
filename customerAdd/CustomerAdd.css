@@ -1,3 +1,10 @@
+/*
+Page: CustomerAdd.css
+Name: Aaron Doyle
+StudentID: C00272515
+Date: 17/3/23
+Purpose: This is the code that is used to design the add customer screen
+*/
 :root {
     --cool-blue: #0077C8 ;
     --dark-grey: #4C4C4C;
@@ -143,6 +150,18 @@ form .inputbox{
 .buttoncss{
     border: none;
     background-color: var(--cool-blue);
+    margin: 4px 10px;
+    border-radius: 10px;
+    padding: 8px 4px;
+	color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.homeMenu{
+	text-decoration: none;
+	background-color: var(--cool-blue);
+	border: none;
     margin: 4px 10px;
     border-radius: 10px;
     padding: 8px 4px;

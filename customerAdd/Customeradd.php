@@ -1,3 +1,10 @@
+<!-- 
+Page: Customeradd.php
+Name: Aaron Doyle
+StudentID: C00272515
+Date: 17/3/23
+Purpose: This is the screen is seen by the user when they click on the add customer screen and it allows them to add a new customer to the database
+-->
 <?php
 include '../assets/php/db_connection.php';
 ?>
@@ -28,6 +35,7 @@ include '../assets/php/db_connection.php';
             return false;
         }
     } 
+//This function is just used to confirm the upload of a new user to the database and stops accidental uploads
     </script>
 <body>
     <div class="horizonal-nav">
@@ -57,41 +65,36 @@ include '../assets/php/db_connection.php';
 				
                 <div class="inputbox">
                     <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First Name must be only letters and less than 20 characters" maxlength="20" required>
-                    <!-- Here I am creating the input box for the users first name and making security measures such as only using letters and making it a required field -->
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name" pattern="^[A-Za-z]+$" title="First 					   Name must be only letters and less than 20 characters" maxlength="20" required>
                 </div>
         
                 <div class="inputbox">
                     <label for="surname">Surname</label>
-                    <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]+$" title="Surname must be only letters and less than 20 characters" maxlength="20" required>
-                    <!-- Here I am creating the input box for the users surname and making security measures such as only using letters, making it a required field and having a max length of 20 characters -->
+                    <input type="text" name="surname" id="surname" placeholder="Surname" pattern="[A-Za-z]+$" title="Surname must 					  be only letters and less than 20 characters" maxlength="20" required>
                 </div>
         
                 <div class="inputbox">
                     <label for="dob">Date Of Birth</label>
                     <input type="date" name="dob" id="dob" placeholder="Date Of Birth" min='1900-01-01' max='2023-03-29' required>
-                    <!-- Here I am creating the input box for the customers date of birth using the date of birth input type and making it a required field -->
                 </div>
 
                 <div class="inputbox">
                     <label for="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="Address" pattern="^[A-Za-z0-9\s]+$" title="Address must only conatin letters and numbers" required >
-                    <!-- Here I am creating the input box for the customers address using a text input type and using the patterns to only allow numbers and letters -->
+                    <input type="text" name="address" id="address" placeholder="Address" pattern="^[A-Za-z0-9\s]+$" title="Address 					   must only conatin letters and numbers" required >
                 </div>
 
                 <div class="inputbox">
                     <label for="phonenum">Phone Number  </label>
-                    <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
-                    <!-- Here I am creating the input box for the customers phone number using a text input type but using the patterns to only allow numbers-->
+                    <input type="text" name="phonenum" id="phonenum" placeholder="Phone Number" pattern="^[0-9\s]+$" title="Phone 					  Number must only contain numbers and spaces with a max of 12 characters" maxlength="12" required >
                 </div>
                 
                 <div class="buttons">
                     <input type="reset" class="buttoncss" value="Clear Form" name="reset">
                     <input type="submit" class="buttoncss"  value="Send Form" name="submit">
-                </div>
-                <!-- These are the buttons below the list to either submit the details to the database or clear the list -->
+				</div>   
             </form>
-            </div>
+				<a href="../Menu/AaronsMenu.html" class="homeMenu">Return To Menu</a>
+          	</div>
         </main>
     </div>
 </body>

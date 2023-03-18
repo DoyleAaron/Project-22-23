@@ -1,3 +1,13 @@
+<!--
+
+Name of screen: deletesupplier.php
+Purpose of screen: Delete a supplier from the database.
+Student ID: C00274246
+Student Name: Jack Foley
+Date written: March 2023
+
+-->
+
 <?php
 include_once('includes/dbh.inc.php');
 ?>
@@ -38,7 +48,7 @@ include_once('includes/dbh.inc.php');
         <a href="suppliers.php" class="selected">Supplier</a>
     </div>
     <main>
-        <form name="form" action="includes/deletesupplier.inc.php" method="post" class="info-wrapper" ">
+        <form name="form" action="includes/deletesupplier.inc.php" method="post" class="info-wrapper">
             <div class="info">
                 <label for="select">Supplier </label>
                 <select name="select" id="select" onchange="change()">

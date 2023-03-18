@@ -1,3 +1,13 @@
+<!--
+
+Name of screen: amendview.php
+Purpose of screen: Amend or view a supplier from the database.
+Student ID: C00274246
+Student Name: Jack Foley
+Date written: February 2023
+
+-->
+
 <?php
 
 include_once('includes/dbh.inc.php');

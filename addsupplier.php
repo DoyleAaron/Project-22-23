@@ -1,3 +1,13 @@
+<!--
+
+Name of screen: addsupplier.php
+Purpose of screen: Add a supplier to the database.
+Student ID: C00274246
+Student Name: Jack Foley
+Date written: February 2023
+
+-->
+
 <?php
 
 include_once 'includes/addsupplier.functions.php';

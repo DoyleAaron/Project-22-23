@@ -1,3 +1,11 @@
+/* 
+Page: CounterSales.css
+Name: Aaron Doyle
+StudentID: C00272515
+Date: 17/3/23
+Purpose: This is the screen for the css of the counter sales screen
+*/
+
 :root {
     --cool-blue: #0077C8 ;
     --dark-grey: #4C4C4C;
@@ -76,8 +84,6 @@ body .horizonal-nav .account-container button span {
 
 .main-container {
     display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 body .vertical-nav {
@@ -116,22 +122,25 @@ body .vertical-nav a:hover {
 
 /* template end */
 
+
 main {
     width: 100%;
     min-height: 100%;
 	align-items: center;
 }
 
-.amendcustbox{
+.form-container{
     display: flex;
 	flex-direction: column;
     background-color: var(--bg-sect-div);
     border: 2px black solid;
-    height: 500px;
-    width: 400px;
+    height: 600px;
+    width: 450px;
     border-radius: 50px;
     align-items: center;
-	margin: auto;
+	margin: 0 auto;
+	justify-content: center;
+    margin-top: 20px;
 }
 
 .inputbox{
@@ -142,14 +151,18 @@ main {
 }
 
 .buttoncss{
-    border: none;
-    background-color: var(--cool-blue);
+    text-decoration: none;
+	background-color: var(--cool-blue);
+	border: none;
     margin: 4px 10px;
     border-radius: 10px;
     padding: 8px 4px;
 	color: white;
     cursor: pointer;
     text-align: center;
+	align-items: center;
+	display: block;
+    margin: 0 auto;
 }
 
 .homeMenu{

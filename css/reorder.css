@@ -1,9 +1,9 @@
 /*
-Name of file: suppliers.css
-Purpose of screen: This screen is used to style the suppliers menu.
+Name of file: reorder.css
+Purpose of screen: This screen is used to style the reorder page.
 Student ID: C00274246
 Student Name: Jack Foley
-Date written: February 2023
+Date written: March 2023
 */
 
 :root {
@@ -19,6 +19,8 @@ Date written: February 2023
 
     --nav-txt-size: 18px;
     --bold: 22px;
+
+    --input-width: 60%;
 }
 
 html, body {
@@ -129,34 +131,80 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-main .box-container {
+main form {
+    border: solid black;
+    border-radius: 10px;
+    padding: 40px;
+    width: 30%;
+}
+
+main form h1 {
+    text-align: center;
+    margin: 0 0 30px 0; /* T R B L */
+}
+
+main form .info, .in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main form .info input {
+    padding: 5px;
+    width: calc(var(--input-width) - 14px);
+}
+
+main form .in input {
+    padding: 5px;
+    width: calc(var(--input-width) - 14px);
+}
+
+main form .info select {
+    padding: 5px;
+    width: 60%;
+}
+
+main form .buttons {
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+main form .buttons .amend-buttons {
+    width: 100%;
+    display: flex;
     justify-content: center;
+}
+
+main form .buttons .amend-buttons button {
     width: 100%;
 }
 
-main .box-container a {
-    background-color: var(--cool-blue);
+main form .buttons button {
+    border: none;
     border-radius: 5px;
+    color: white;
+    background: var(--cool-blue);
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.err {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    width: 30%;
-    margin: 10px 0;
-    transition: 0.2s all ease-in-out;
+    margin: 20px 0 0 0;
 }
 
-main .box-container .box p {
-    color: var(--bg-sect-div);
-    font-size: 24px;
+.err .success {
+    color: #00A651;
 }
 
-main .box-container a:hover {
-    transition: 0.2s all ease-in-out;
-    background-color: #0886d7;
+.err .fail {
+    color: #FF0000;
 }

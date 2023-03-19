@@ -1,3 +1,11 @@
+/*
+Name of file: amendview.js
+Purpose of screen: This file is used to toggle between the view and amend screens, as well as dynamically change the values of the form fields.
+Student ID: C00274246
+Student Name: Jack Foley
+Date written: March 2023
+*/
+
 const select = document.getElementById('select');
 const amendButton = document.getElementById('amend');
 const saveButton = document.getElementById('save');

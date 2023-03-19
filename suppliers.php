@@ -1,3 +1,13 @@
+<!--
+
+Name of screen: suppliers.php
+Purpose of screen: The main menu for the suppliers page.
+Student ID: C00274246
+Student Name: Jack Foley
+Date written: February 2023
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +35,7 @@
 </div>
 <div class="main-container">
     <div class="vertical-nav">
-        <a href="#`">Drugs</a>
+        <a href="#">Drugs</a>
         <a href="#">Stock Control</a>
         <a href="#">Doctor</a>
         <a href="#">Customer</a>

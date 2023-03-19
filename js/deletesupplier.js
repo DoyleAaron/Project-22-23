@@ -1,3 +1,11 @@
+/*
+Name of file: deletesupplier.js
+Purpose of screen: This screen is used to dynamically change the values of the form when a supplier is selected from the dropdown list.
+Student ID: C00274246
+Student Name: Jack Foley
+Date written: March 2023
+*/
+
 const select = document.getElementById('select');
 const hiddenButton = document.getElementById('hidden');
 init();

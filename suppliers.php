@@ -58,8 +58,10 @@ Date written: February 2023
                     <p>Delete Supplier</p>
                 </div>
             </a>
-            <a href="">
-                <div class="box"></div>
+            <a href="reorder.php">
+                <div class="box">
+                    <p>Manual Reorder</p>
+                </div>
             </a>
         </div>
     </main>

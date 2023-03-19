@@ -37,10 +37,10 @@ $suppliers = getSupplierOptions();
     <link rel="stylesheet" href="css/reorder.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <script src="js/date.js" defer></script>
-    <script src="js/reorder.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="js/date.js" defer></script>
+    <script src="js/reorder.js" defer></script>
 <body>
 <div class="horizonal-nav">
     <span id="time"></span>
@@ -63,7 +63,10 @@ $suppliers = getSupplierOptions();
         <a href="suppliers.php" class="selected">Supplier</a>
     </div>
     <main>
-        <form name="form" action="includes/reorder.inc.php" method="post" class="info-wrapper">
+        <form name="form" action="includes/reorder.inc.php" method="post" class="info-wrapper" onsubmit="return confirm('Are you sure you want to reorder this supplier?')">
+            <div class="title">
+                <h1>Reorder</h1>
+            </div>
             <div class="info">
                 <label for="select">Supplier </label>
                 <select name="select" id="select">
@@ -81,37 +84,37 @@ $suppliers = getSupplierOptions();
 
             <div class="info">
                 <label for="id">ID </label>
-                <input type="text" name="id" id="id" disabled>
+                <input type="text" name="id" id="id" readonly>
             </div>
 
             <div class="info">
                 <label for="brandName">Brand Name </label>
-                <input type="text" name="brandName" id="brandName" disabled>
+                <input type="text" name="brandName" id="brandName" readonly>
             </div>
 
             <div class="info">
                 <label for="genName">Generic Name </label>
-                <input type="text" name="genName" id="genName" disabled>
+                <input type="text" name="genName" id="genName" readonly>
             </div>
 
             <div class="info">
                 <label for="form">Form </label>
-                <input type="text" name="form" id="form" disabled>
+                <input type="text" name="form" id="form" readonly>
             </div>
 
             <div class="info">
                 <label for="strength">Strength </label>
-                <input type="url" name="strength" id="strength" disabled>
+                <input type="url" name="strength" id="strength" readonly>
             </div>
 
             <div class="info">
                 <label for="usage">Usage </label>
-                <input type="text" name="usage" id="usage" disabled>
+                <input type="text" name="usage" id="usage" readonly>
             </div>
 
             <div class="info">
                 <label for="sideEffects">Side Effects </label>
-                <input type="text" name="sideEffects" id="sideEffects" disabled>
+                <input type="text" name="sideEffects" id="sideEffects" readonly>
             </div>
 
             <div class="in">
@@ -121,6 +124,7 @@ $suppliers = getSupplierOptions();
 
             <input type="hidden" name="supplierID" id="supplierID">
             <input type="hidden" name="drugID" id="drugID">
+            <input type="hidden" name="submitted">
 
             <div class="buttons">
                 <button id="reorder" type="submit">Confirm Reorder</button>
@@ -128,11 +132,13 @@ $suppliers = getSupplierOptions();
 
             <div class="err">
                 <?php
-                if (isset($_GET['amend'])) {
-                    if ($_GET['amend'] == "success") {
-                        echo "<p class='success'>Amend successful</p>";
-                    } else if ($_GET['amend'] == "failed") {
-                        echo "<p class='fail'>Amend failed</p>";
+                if (isset($_GET['error'])) {
+                    if ($_GET['error'] == "none") {
+                        echo "<p class='success'>Reorder successful</p>";
+                    } else if ($_GET['error'] == "fail") {
+                        echo "<p class='fail'>Reorder failed</p>";
+                    } else if ($_GET['error'] == "bad-quantity") {
+                        echo "<p class='fail'>Bad quantity!</p>";
                     }
                 }
                 ?>

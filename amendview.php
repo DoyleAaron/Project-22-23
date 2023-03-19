@@ -54,12 +54,15 @@ if (!isset($_SESSION)) {
     </div>
     <main>
         <form name="form" action="includes/amendview.inc.php" method="post" class="info-wrapper">
+            <div class="title">
+                <h1>Amend Supplier</h1>
+            </div>
             <div class="info">
                 <label for="select">Supplier </label>
                 <select name="select" id="select" onchange="change()">
                     <?php
 
-                    $stmt = $conn->prepare("SELECT * FROM Suppliers WHERE deleted = 0");
+                    $stmt = $conn->prepare("SELECT * FROM suppliers WHERE deleted = 0");
                     $stmt->execute();
                     $result = $stmt->get_result();
 

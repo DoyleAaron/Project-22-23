@@ -194,6 +194,11 @@ main form .buttons button {
     font-size: 16px;
 }
 
+main form .buttons button[disabled] {
+    opacity: .5;
+    cursor: default ;
+}
+
 .err {
     display: flex;
     align-items: center;

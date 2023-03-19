@@ -12,8 +12,6 @@ Date written: March 2023
 include_once('includes/dbh.inc.php');
 ?>
 
-// TODO: Do not delete if there is a current order w/ supplier or there is a stock item from supplier in the stocks table
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,12 +49,15 @@ include_once('includes/dbh.inc.php');
     </div>
     <main>
         <form name="form" action="includes/deletesupplier.inc.php" method="post" class="info-wrapper">
+            <div class="title">
+                <h1>Delete Supplier</h1>
+            </div>
             <div class="info">
                 <label for="select">Supplier </label>
                 <select name="select" id="select" onchange="change()">
                     <?php
 
-                    $stmt = $conn->prepare("SELECT * FROM Suppliers WHERE deleted = 0");
+                    $stmt = $conn->prepare("SELECT * FROM suppliers WHERE deleted = 0");
                     $stmt->execute();
                     $result = $stmt->get_result();
 
@@ -119,6 +120,10 @@ include_once('includes/dbh.inc.php');
                         echo "<p class='success'>Deletion successful.</p>";
                     } else if ($_GET['delete'] == "failed") {
                         echo "<p class='fail'>Supplier was not deleted.</p>";
+                    } else if ($_GET['delete'] == 'has-order') {
+                        echo "<p class='fail'>Order in for this supplier.</p>";
+                    } else if ($_GET['delete'] == 'has-stock') {
+                        echo "<p class='fail'>Stock in from this supplier.</p>";
                     }
                 }
                 ?>

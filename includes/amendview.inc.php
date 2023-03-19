@@ -9,7 +9,7 @@ $email = $_POST['email'];
 $website = $_POST['website'];
 $telephone = $_POST['telephone'];
 
-$stmt = $conn->prepare("UPDATE Suppliers SET supplierName = ?, address = ?, email = ?, website = ?, telephone = ? WHERE supplierID = ? AND deleted = 0");
+$stmt = $conn->prepare("UPDATE suppliers SET supplierName = ?, address = ?, email = ?, website = ?, telephone = ? WHERE supplierID = ? AND deleted = 0");
 $stmt->bind_param("sssssi", $name, $address, $email, $website, $telephone, $id);
 $stmt->execute();
 

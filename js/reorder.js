@@ -49,13 +49,27 @@ let pop = () => {
     const drugInfo = drugSelect.value;
     const drugInfoArray = drugInfo.split('|');
 
-    id.value = drugInfoArray[0];
-    name.value = drugInfoArray[1];
-    genericName.value = drugInfoArray[2];
-    form.value = drugInfoArray[3];
-    strength.value = drugInfoArray[4];
-    usage.value = drugInfoArray[5];
-    sideEffects.value = drugInfoArray[6];
+    if (drugInfoArray[0] === '') {
+        id.value = 'N/A';
+        name.value = 'N/A';
+        genericName.value = 'N/A';
+        form.value = 'N/A';
+        strength.value = 'N/A';
+        usage.value = 'N/A';
+        sideEffects.value = 'N/A';
+        document.getElementById('amount').disabled = true;
+        document.getElementById('reorder').disabled = true;
+    } else {
+        id.value = drugInfoArray[0];
+        name.value = drugInfoArray[1];
+        genericName.value = drugInfoArray[2];
+        form.value = drugInfoArray[3];
+        strength.value = drugInfoArray[4];
+        usage.value = drugInfoArray[5];
+        sideEffects.value = drugInfoArray[6];
+        document.getElementById('amount').disabled = false;
+        document.getElementById('reorder').disabled = false;
+    }
 
     const drugID = document.getElementById('drugID');
     drugID.value = id.value;

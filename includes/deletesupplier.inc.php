@@ -1,8 +1,6 @@
 <?php
 include_once 'dbh.inc.php';
 
-// TODO: Do not delete if there is a current order w/ supplier or there is a stock item from supplier in the stocks table
-
 if (isset($_POST['submitted'])) {
     // Check if not deleted
     $id = $_POST['id'];

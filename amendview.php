@@ -12,9 +12,6 @@ Date written: February 2023
 
 include_once('includes/dbh.inc.php');
 
-if (!isset($_SESSION)) {
-    session_start();
-}
 ?>
 
 <!DOCTYPE html>

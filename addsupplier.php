@@ -12,10 +12,6 @@ Date written: February 2023
 
 include_once 'includes/addsupplier.functions.php';
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 ?>
 
 <!DOCTYPE html>

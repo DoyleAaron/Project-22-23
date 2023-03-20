@@ -93,7 +93,7 @@ include '../assets/php/db_connection.php';
            <a href="#">Drugs</a>
             <a href="#">Stock Control</a>
             <a href="#">Doctor</a>
-            <a href="#" class="selected">Customer</a>
+            <a href="../Menu/AaronsMenu.html" class="selected">Customer</a>
             <a href="#">Supplier</a>
         </div>
         <main>
@@ -140,7 +140,6 @@ include '../assets/php/db_connection.php';
                 
                 <input type="submit" class = "buttoncss" value="Save Changes">
         	</form>
-				<a href="../Menu/AaronsMenu.html" class="homeMenu">Return To Menu</a>
          </div>
       </main>
   </div>

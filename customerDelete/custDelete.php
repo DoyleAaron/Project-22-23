@@ -118,7 +118,6 @@ include '../assets/php/db_connection.php';
             <input type="submit" value="Delete the record" class ="buttoncss" align="center">
 			
 			</form>
-				<a href="../Menu/AaronsMenu.html" class="homeMenu">Return To Menu</a>
 			</div>
         </main>
     </div>

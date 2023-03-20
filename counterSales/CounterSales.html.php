@@ -75,7 +75,7 @@ include '../assets/php/db_connection.php';
             <a href="#">Drugs</a>
             <a href="#">Stock Control</a>
             <a href="#">Doctor</a>
-            <a href="#" class="selected">Customer</a>
+            <a href="../Menu/AaronsMenu.html" class="selected">Customer</a>
             <a href="#">Supplier</a>
         </div>
         <main>
@@ -109,8 +109,6 @@ include '../assets/php/db_connection.php';
 	<form name ="completePurchase" action="CompletePurchase.php" onsubmit="confirmPurchase()" method="post">
 		<input type="submit" value="Checkout" class="buttoncss" align="center">
 	</form>
-	<br>
-	<a href="../Menu/AaronsMenu.html" class="homeMenu">Return To Menu</a>
 			</div>
         </main>
     </div>
